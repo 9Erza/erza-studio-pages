@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#06070b">
-<title data-pl="Erza Studio · Małe, spokojne gry mobilne">Erza Studio · Small, calm mobile games</title>
-<meta name="description" content="Erza Studio makes small, calm mobile games. First up: Sort Puzzle, a relaxing color-sorting puzzle that works offline and needs no account.">
+<title data-pl="Erza Studio · Małe, spokojne gry i narzędzia">Erza Studio · Small, calm games and tools</title>
+<meta name="description" content="Erza Studio: small, calm mobile games and open-source Windows tools. Sort Puzzle is a relaxing color-sorting puzzle; FrameHub and Process Core Optimizer are free hobby projects under the MIT license.">
 <link rel="stylesheet" href="studio.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -18,7 +18,8 @@
   <nav aria-label="Main" data-al-en="Main" data-al-pl="Główna">
     <a href="#how"><b>01</b><span> · <span data-l="en">How it works</span><span data-l="pl">Jak to działa</span></span></a>
     <a href="#games"><b>02</b><span> · <span data-l="en">Games</span><span data-l="pl">Gry</span></span></a>
-    <a href="#contact"><b>03</b><span> · <span data-l="en">Contact</span><span data-l="pl">Kontakt</span></span></a>
+    <a href="#opensource"><b>03</b><span> · Open source</span></a>
+    <a href="#contact"><b>04</b><span> · <span data-l="en">Contact</span><span data-l="pl">Kontakt</span></span></a>
   </nav>
   <div class="lang" role="group" aria-label="Language" data-al-en="Language" data-al-pl="Język">
     <button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="pl" aria-pressed="false">PL</button>
@@ -32,14 +33,16 @@
   <div class="hero-in">
     <div class="glass glow hero-card reveal">
       <p class="label">// ERZA STUDIO</p>
-      <h1><span data-l="en">Small, calm<br><em>mobile games.</em></span><span data-l="pl">Małe, spokojne<br><em>gry mobilne.</em></span></h1>
-      <p class="lead"><span data-l="en">Cozy puzzles you can pick up for a minute and put down again. No accounts, no pressure.</span><span data-l="pl">Przytulne łamigłówki na minutę i na dłużej. Bez konta, bez presji.</span></p>
-      <p><a class="btn" href="#games"><span data-l="en">Meet our first game</span><span data-l="pl">Poznaj naszą pierwszą grę</span> <span aria-hidden="true">→</span></a></p>
+      <h1><span data-l="en">Small, calm<br><em>games and tools.</em></span><span data-l="pl">Małe, spokojne<br><em>gry i narzędzia.</em></span></h1>
+      <p class="lead"><span data-l="en">Mobile games and open-source Windows tools, made by one person in their spare time. No accounts, no pressure.</span><span data-l="pl">Gry mobilne i otwartoźródłowe narzędzia na Windows, tworzone przez jedną osobę po godzinach. Bez kont, bez presji.</span></p>
+      <p class="buttons"><a class="btn" href="#games"><span data-l="en">Meet our first game</span><span data-l="pl">Poznaj naszą pierwszą grę</span> <span aria-hidden="true">→</span></a><a class="btn ghost-link" href="#opensource"><span data-l="en">Open-source tools</span><span data-l="pl">Narzędzia open source</span></a></p>
     </div>
     <aside class="glass glow status reveal" aria-label="Status">
       <p class="label">// STATUS</p>
       <p class="st"><span class="pulse" aria-hidden="true"></span>Sort Puzzle</p>
       <p class="muted"><span data-l="en">Android · in testing</span><span data-l="pl">Android · w testach</span></p>
+      <p class="st st2">FrameHub · PCO</p>
+      <p class="muted"><span data-l="en">Windows · open source (MIT)</span><span data-l="pl">Windows · open source (MIT)</span></p>
     </aside>
   </div>
   <p class="scrollhint" aria-hidden="true"><span data-l="en">SCROLL</span><span data-l="pl">PRZEWIŃ</span> ↓</p>
@@ -48,7 +51,7 @@
 <section class="story" id="how" aria-labelledby="how-h">
   <div class="stage">
     <div class="copy">
-      <p class="label">01 · <span data-l="en">HOW IT WORKS</span><span data-l="pl">JAK TO DZIAŁA</span></p>
+      <p class="label">01 · <span data-l="en">HOW SORT PUZZLE WORKS</span><span data-l="pl">JAK DZIAŁA SORT PUZZLE</span></p>
       <h2 id="how-h"><span data-l="en">Pour. Sort.<br><em>Repeat.</em></span><span data-l="pl">Przelewaj. Sortuj.<br><em>Powtarzaj.</em></span></h2>
       <ol class="steps">
         <li><b>01</b><span><span data-l="en">Pick a bottle and pour it onto a matching color.</span><span data-l="pl">Wybierz butelkę i przelej ją na pasujący kolor.</span></span></li>
@@ -87,10 +90,35 @@
   </article>
 </section>
 
+<section class="section oss" id="opensource" aria-labelledby="oss-h">
+  <p class="label reveal">03 · OPEN SOURCE</p>
+  <h2 id="oss-h" class="reveal"><span data-l="en">Tools for<br><em>Windows.</em></span><span data-l="pl">Narzędzia<br><em>na Windows.</em></span></h2>
+  <p class="lead reveal"><span data-l="en">Free, open-source hobby projects (MIT). I don't make money from them; if you like them, you can support them with a coffee. Entirely voluntary.</span><span data-l="pl">Darmowe, otwartoźródłowe projekty hobbystyczne (MIT). Nie zarabiam na nich; jeśli Ci się podobają, możesz postawić mi kawę. Całkowicie dobrowolnie.</span></p>
+  <div class="oss-grid">
+    <article class="glass glow app reveal">
+      <a class="app-shot" href="framehub/" tabindex="-1" aria-hidden="true"><img src="framehub/shots/framehub-dashboard.webp" width="1200" height="831" loading="lazy" decoding="async" alt=""></a>
+      <p class="label">// OPEN SOURCE · MIT</p>
+      <h3>FRAMEHUB</h3>
+      <p><span data-l="en">Game library, per-game CPU profiles, session optimization, local benchmarks and hardware monitoring in one Windows app, with explicit, reversible changes.</span><span data-l="pl">Biblioteka gier, profile CPU dla gier, optymalizacja sesji, lokalne benchmarki i monitor sprzętu w jednej aplikacji na Windows, z jawnymi i odwracalnymi zmianami.</span></p>
+      <ul class="chips"><li>v1.0.1</li><li>Windows 10/11</li><li>C# · .NET 10</li></ul>
+      <p class="buttons"><a class="btn" href="framehub/"><span data-l="en">About FrameHub</span><span data-l="pl">O FrameHub</span> <span aria-hidden="true">→</span></a><a class="btn ghost-link" href="https://github.com/9Erza/FrameHub" rel="noopener">GitHub</a></p>
+    </article>
+    <article class="glass glow app reveal">
+      <a class="app-shot" href="pco/" tabindex="-1" aria-hidden="true"><img src="pco/shots/pco-processes.webp" width="1200" height="880" loading="lazy" decoding="async" alt=""></a>
+      <p class="label">// OPEN SOURCE · MIT</p>
+      <h3>PROCESS CORE OPTIMIZER</h3>
+      <p><span data-l="en">Direct control of how Windows processes use the CPU: affinity, CPU Sets, priorities and automatic profiles. A small, focused utility.</span><span data-l="pl">Bezpośrednia kontrola nad tym, jak procesy Windows używają procesora: affinity, CPU Sets, priorytety i automatyczne profile. Małe, wyspecjalizowane narzędzie.</span></p>
+      <ul class="chips"><li>v2.0.0</li><li>Windows 10/11</li><li>C# · .NET 10</li></ul>
+      <p class="buttons"><a class="btn" href="pco/"><span data-l="en">About PCO</span><span data-l="pl">O PCO</span> <span aria-hidden="true">→</span></a><a class="btn ghost-link" href="https://github.com/9Erza/ProcessCoreOptimizer" rel="noopener">GitHub</a></p>
+    </article>
+  </div>
+  <p class="reveal"><a class="btn ghost-link" href="https://buymeacoffee.com/9erza" rel="noopener">☕ <span data-l="en">Buy me a coffee (voluntary)</span><span data-l="pl">Postaw mi kawę (dobrowolnie)</span></a></p>
+</section>
+
 <section class="section contact" id="contact" aria-labelledby="contact-h">
-  <p class="label reveal">03 · <span data-l="en">CONTACT</span><span data-l="pl">KONTAKT</span></p>
+  <p class="label reveal">04 · <span data-l="en">CONTACT</span><span data-l="pl">KONTAKT</span></p>
   <h2 id="contact-h" class="reveal"><span data-l="en">Say<br><em>hello.</em></span><span data-l="pl">Napisz<br><em>do nas.</em></span></h2>
-  <p class="lead reveal"><span data-l="en">Questions, ideas, bug reports: we read everything.</span><span data-l="pl">Pytania, pomysły, błędy: czytamy wszystko.</span></p>
+  <p class="lead reveal"><span data-l="en">Questions, ideas, bug reports: I read everything.</span><span data-l="pl">Pytania, pomysły, błędy: czytam wszystko.</span></p>
   <p class="reveal"><a class="mail" href="mailto:contact@erza.studio">contact@erza.studio</a></p>
 </section>
 
@@ -101,6 +129,7 @@
   <nav aria-label="Footer" data-al-en="Footer" data-al-pl="Stopka">
     <a href="#how"><span data-l="en">How it works</span><span data-l="pl">Jak to działa</span></a>
     <a href="#games"><span data-l="en">Games</span><span data-l="pl">Gry</span></a>
+    <a href="#opensource">Open source</a>
     <a href="#contact"><span data-l="en">Contact</span><span data-l="pl">Kontakt</span></a>
     <a href="sortpuzzle/privacy/"><span data-l="en">Privacy policy</span><span data-l="pl">Polityka prywatności</span></a>
   </nav>

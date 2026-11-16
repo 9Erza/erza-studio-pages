@@ -214,6 +214,41 @@ h1 em,h2 em{font-style:normal;color:var(--accent);font-weight:300}
 .prose-page th,.prose-page td{border:1px solid var(--line);padding:.55rem .7rem;text-align:left;vertical-align:top}
 .prose-page th{background:rgba(255,255,255,.04);font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .prose-page section{scroll-margin-top:5rem}
+/* open-source apps: studio cards, app pages */
+.st2{margin-top:.9rem}
+.status p.st2+p{margin-top:.1rem}
+.hero-card .buttons{margin-top:1.2rem}
+.oss-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.2rem;margin:2rem 0 1.5rem}
+.app{padding:1.2rem;display:flex;flex-direction:column;gap:.2rem}
+.app .app-shot{display:block;margin-bottom:1rem;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0b0f17}
+.app .app-shot img{width:100%;height:auto;transition:transform .6s}
+.app:hover .app-shot img{transform:scale(1.03)}
+.app h3{font-size:1.4rem;margin:.1rem 0 .6rem}
+.app p{color:var(--muted);margin:0 0 .8rem}
+.app .label{margin-bottom:.5rem}
+.app .buttons{margin-top:auto;padding-top:.5rem}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:.2rem 0 .6rem}
+.chips li{font:500 .72rem var(--mono);letter-spacing:.06em;border:1px solid var(--line);border-radius:8px;padding:.25rem .6rem;color:var(--ink);background:rgba(255,255,255,.03)}
+.app-h1{font-size:clamp(2.2rem,8.5vw,3.6rem)!important;overflow-wrap:anywhere}
+.gallery.wide{align-items:center;flex-wrap:nowrap}
+.wshot{flex:none;width:min(88vw,34rem);scroll-snap-align:center}
+.wshot img{width:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 24px 60px -24px rgba(0,0,0,.9),0 0 46px -14px var(--accent-glow)}
+.app-right{min-width:0}
+.shotnote{font:500 .72rem var(--mono);letter-spacing:.04em;color:var(--muted);margin:.2rem .3rem 0}
+.notes .feat h3{font-size:1.1rem}
+.instsel{list-style:none;padding:0;margin:1.5rem 0;display:grid;gap:.8rem;max-width:46rem}
+.instsel li{display:flex;gap:1rem;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:16px;background:rgba(13,17,26,.5)}
+.instsel b{font:500 .8rem var(--mono);color:var(--accent);padding-top:.3rem}
+.instsel span{overflow-wrap:anywhere}
+@media (min-width:860px){
+  .oss-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .app-hero{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+  .app-h1{font-size:clamp(2.2rem,3.7vw,3.6rem)!important}
+  .gallery.wide{margin:0;padding-inline:.3rem 3rem}
+  .wshot{width:clamp(24rem,44vw,42rem)}
+  .notes{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .glow::after{display:none}
