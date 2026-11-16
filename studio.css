@@ -269,3 +269,14 @@ h1 em,h2 em{font-style:normal;color:var(--accent);font-weight:300}
 .app-shot:not(.phones) img{height:100%;object-fit:cover;object-position:top left}
 @media (min-width:1080px){.proj-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (min-width:640px) and (max-width:1079px){.proj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* studio page: compact "on the side" section */
+.h-sm{font-size:clamp(1.8rem,5.5vw,3.2rem)!important}
+.side .lead{margin-bottom:1.4rem}
+.side-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin:0 0 1.5rem}
+.side-card{display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.4rem;text-decoration:none}
+.side-card .label{margin:0}
+.side-card b{font-size:1.3rem;font-weight:400;letter-spacing:.02em}
+.side-card span:not(.label){color:var(--muted)}
+.side-card em{font-style:normal;color:var(--accent);font:500 .8rem var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-top:.3rem}
+@media (min-width:760px){.side-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
