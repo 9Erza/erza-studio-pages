@@ -197,14 +197,15 @@ h1 em,h2 em{font-style:normal;color:var(--accent);font-weight:300}
 .anim .reveal.feat:nth-child(3n+2){transition-delay:.08s}
 .anim .reveal.feat:nth-child(3n){transition-delay:.16s}
 
-/* privacy policy prose (content unchanged, only restyled) */
+/* Privacy policy */
 .prose-page main{max-width:50rem;margin:0 auto;padding:6rem var(--gut) 3rem}
 .prose-page h1{font-size:clamp(1.9rem,6.5vw,3.2rem);margin-bottom:1rem}
 .prose-page h2{font-size:clamp(1.3rem,3.4vw,1.8rem);font-weight:300;margin:2.6rem 0 .8rem;letter-spacing:.04em;color:var(--ink)}
 .prose-page section{margin-top:1.5rem}
 .prose-page p,.prose-page li{color:#d3d9e3}
 .prose-page strong{color:var(--ink);font-weight:600}
-.prose-page a{color:var(--accent);text-underline-offset:3px}
+.prose-page a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}
+html:not(.js) .prose-page .policy-language[data-l=pl]{display:block}
 .prose-page ul{padding-left:1.2rem}
 .prose-page .langs a{display:inline-block;margin-right:.6rem;padding:.35rem .9rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
 .prose-page .langs a:hover{border-color:var(--accent)}
