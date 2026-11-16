@@ -1,28 +1,112 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Erza Studio</title>
-<meta name="description" content="Erza Studio: small, calm mobile games.">
-<link rel="stylesheet" href="style.css">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#06070b">
+<title>Erza Studio · Small, calm mobile games</title>
+<meta name="description" content="Erza Studio makes small, calm mobile games. First up: Sort Puzzle, a relaxing color-sorting puzzle that works offline and needs no account.">
+<link rel="stylesheet" href="studio.css">
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-<header class="site"><div class="wrap">
-<a class="brand" href="./">Erza Studio</a>
-<nav><a href="sortpuzzle/">Sort Puzzle</a><a href="sortpuzzle/privacy/">Privacy / Prywatność</a></nav>
-</div></header>
-<main class="wrap">
+<a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="pl">Przejdź do treści</span></a>
 
-<h1>Erza Studio</h1>
-<p class="lead">Small, calm mobile games. / Małe, spokojne gry mobilne.</p>
-<div class="card"><h2>Sort Puzzle</h2>
-<p>A relaxing color-sorting puzzle: pour colors between bottles until every color has its own. Works offline, no account needed.<br>
-Relaksująca łamigłówka: przelewaj kolory między butelkami, aż każdy ma swoją. Działa offline, bez konta.</p>
-<p><a class="btn" href="sortpuzzle/">Sort Puzzle →</a></p></div>
-<p>Contact / Kontakt: <a href="mailto:contact@erza.studio">contact@erza.studio</a></p>
+<header class="top">
+  <a class="brand" href="#top" aria-label="Erza Studio"><span class="dot" aria-hidden="true"></span>ERZA STUDIO</a>
+  <nav aria-label="Main / Główna">
+    <a href="#how"><b>01</b><span> · <span data-l="en">How it works</span><span data-l="pl">Jak to działa</span></span></a>
+    <a href="#games"><b>02</b><span> · <span data-l="en">Games</span><span data-l="pl">Gry</span></span></a>
+    <a href="#contact"><b>03</b><span> · <span data-l="en">Contact</span><span data-l="pl">Kontakt</span></span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language / Język">
+    <button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="pl" aria-pressed="false">PL</button>
+  </div>
+</header>
 
-<footer>© Erza Studio · Contact / Kontakt: <a href="mailto:contact@erza.studio">contact@erza.studio</a></footer>
+<main id="main">
+
+<section class="hero" id="top">
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <div class="glass glow hero-card reveal">
+      <p class="label">// ERZA STUDIO</p>
+      <h1><span data-l="en">Small, calm<br><em>mobile games.</em></span><span data-l="pl">Małe, spokojne<br><em>gry mobilne.</em></span></h1>
+      <p class="lead"><span data-l="en">Cozy puzzles you can pick up for a minute and put down again. No accounts, no pressure.</span><span data-l="pl">Przytulne łamigłówki na minutę i na dłużej. Bez konta, bez presji.</span></p>
+      <p><a class="btn" href="#games"><span data-l="en">Meet our first game</span><span data-l="pl">Poznaj naszą pierwszą grę</span> <span aria-hidden="true">→</span></a></p>
+    </div>
+    <aside class="glass glow status reveal" aria-label="Status">
+      <p class="label">// STATUS</p>
+      <p class="st"><span class="pulse" aria-hidden="true"></span>Sort Puzzle</p>
+      <p class="muted"><span data-l="en">Android · in testing</span><span data-l="pl">Android · w testach</span></p>
+    </aside>
+  </div>
+  <p class="scrollhint" aria-hidden="true"><span data-l="en">SCROLL</span><span data-l="pl">PRZEWIŃ</span> ↓</p>
+</section>
+
+<section class="story" id="how" aria-labelledby="how-h">
+  <div class="stage">
+    <div class="copy">
+      <p class="label">01 · <span data-l="en">HOW IT WORKS</span><span data-l="pl">JAK TO DZIAŁA</span></p>
+      <h2 id="how-h"><span data-l="en">Pour. Sort.<br><em>Repeat.</em></span><span data-l="pl">Przelewaj. Sortuj.<br><em>Powtarzaj.</em></span></h2>
+      <ol class="steps">
+        <li><b>01</b><span><span data-l="en">Pick a bottle and pour it onto a matching color.</span><span data-l="pl">Wybierz butelkę i przelej ją na pasujący kolor.</span></span></li>
+        <li><b>02</b><span><span data-l="en">Free up space, plan a few moves ahead. Undo is always free.</span><span data-l="pl">Zrób miejsce, zaplanuj kilka ruchów naprzód. Cofanie jest zawsze darmowe.</span></span></li>
+        <li><b>03</b><span><span data-l="en">Every color rests in its own bottle. Breathe out.</span><span data-l="pl">Każdy kolor ląduje w swojej butelce. Wydech.</span></span></li>
+      </ol>
+    </div>
+    <div class="bottles" aria-hidden="true">
+      <div class="bottle"><div class="neck"></div><div class="body"><i class="seg" style="--c:#E5484D;--i:0"></i><i class="seg" style="--c:#E5484D;--i:1"></i><i class="seg" style="--c:#E5484D;--i:2"></i><i class="seg" style="--c:#E5484D;--i:3"></i></div></div><div class="bottle"><div class="neck"></div><div class="body"><i class="seg" style="--c:#F7C948;--i:4"></i><i class="seg" style="--c:#F7C948;--i:5"></i><i class="seg" style="--c:#F7C948;--i:6"></i><i class="seg" style="--c:#F7C948;--i:7"></i></div></div><div class="bottle"><div class="neck"></div><div class="body"><i class="seg" style="--c:#1FB5C4;--i:8"></i><i class="seg" style="--c:#1FB5C4;--i:9"></i><i class="seg" style="--c:#1FB5C4;--i:10"></i><i class="seg" style="--c:#1FB5C4;--i:11"></i></div></div><div class="bottle"><div class="neck"></div><div class="body"><i class="seg" style="--c:#8E55D9;--i:12"></i><i class="seg" style="--c:#8E55D9;--i:13"></i><i class="seg" style="--c:#8E55D9;--i:14"></i><i class="seg" style="--c:#8E55D9;--i:15"></i></div></div><div class="bottle empty"><div class="neck"></div><div class="body"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section games" id="games" aria-labelledby="games-h">
+  <p class="label reveal">02 · <span data-l="en">GAMES</span><span data-l="pl">GRY</span></p>
+  <h2 id="games-h" class="reveal"><span data-l="en">Our first<br><em>game.</em></span><span data-l="pl">Nasza pierwsza<br><em>gra.</em></span></h2>
+  <article class="glass glow game reveal">
+    <div class="shots">
+      <div class="shot"><img data-l="en" src="sortpuzzle/shots/menu-en.webp" width="450" height="800" loading="lazy" decoding="async" alt="Sort Puzzle main menu"><img data-l="pl" src="sortpuzzle/shots/menu-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt="Menu główne Sort Puzzle"></div><div class="shot"><img data-l="en" src="sortpuzzle/shots/play-en.webp" width="450" height="800" loading="lazy" decoding="async" alt="Sort Puzzle gameplay"><img data-l="pl" src="sortpuzzle/shots/play-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt="Rozgrywka w Sort Puzzle"></div><div class="shot"><img data-l="en" src="sortpuzzle/shots/boss-en.webp" width="450" height="800" loading="lazy" decoding="async" alt="Sort Puzzle boss level with hidden colors"><img data-l="pl" src="sortpuzzle/shots/boss-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt="Poziom-boss z ukrytymi kolorami w Sort Puzzle"></div>
+    </div>
+    <div class="info">
+      <p class="label">// STATUS · <span data-l="en">ANDROID IN TESTING</span><span data-l="pl">ANDROID W TESTACH</span></p>
+      <h3>SORT PUZZLE</h3>
+      <p class="lead"><span data-l="en">A relaxing color-sorting puzzle: pour colors between bottles until every color has its own. Worlds, boss levels, a daily level and hand-made challenges.</span><span data-l="pl">Relaksująca łamigłówka: przelewaj kolory między butelkami, aż każdy ma swoją. Światy, poziomy-bossy, poziom dnia i ręcznie ułożone wyzwania.</span></p>
+      <ul class="tags" aria-label="Tags">
+        <li><span data-l="en">relax</span><span data-l="pl">relaks</span></li><li>offline</li><li><span data-l="en">no account</span><span data-l="pl">bez konta</span></li>
+      </ul>
+      <dl class="facts">
+        <div><dt>300+</dt><dd><span data-l="en">levels</span><span data-l="pl">poziomów</span></dd></div>
+        <div><dt>offline</dt><dd><span data-l="en">play anywhere</span><span data-l="pl">graj gdziekolwiek</span></dd></div>
+        <div><dt>0</dt><dd><span data-l="en">accounts needed</span><span data-l="pl">kont do założenia</span></dd></div>
+        <div><dt>EN · PL</dt><dd><span data-l="en">two languages</span><span data-l="pl">dwa języki</span></dd></div>
+      </dl>
+      <p><a class="btn" href="sortpuzzle/"><span data-l="en">About Sort Puzzle</span><span data-l="pl">O grze Sort Puzzle</span> <span aria-hidden="true">→</span></a></p>
+    </div>
+  </article>
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="contact-h">
+  <p class="label reveal">03 · <span data-l="en">CONTACT</span><span data-l="pl">KONTAKT</span></p>
+  <h2 id="contact-h" class="reveal"><span data-l="en">Say<br><em>hello.</em></span><span data-l="pl">Napisz<br><em>do nas.</em></span></h2>
+  <p class="lead reveal"><span data-l="en">Questions, ideas, bug reports: we read everything.</span><span data-l="pl">Pytania, pomysły, błędy: czytamy wszystko.</span></p>
+  <p class="reveal"><a class="mail" href="mailto:contact@erza.studio">contact@erza.studio</a></p>
+</section>
+
 </main>
+
+<footer class="foot">
+  <p class="brand-s">ERZA STUDIO</p>
+  <nav aria-label="Footer / Stopka">
+    <a href="#how"><span data-l="en">How it works</span><span data-l="pl">Jak to działa</span></a>
+    <a href="#games"><span data-l="en">Games</span><span data-l="pl">Gry</span></a>
+    <a href="#contact"><span data-l="en">Contact</span><span data-l="pl">Kontakt</span></a>
+    <a href="sortpuzzle/privacy/"><span data-l="en">Privacy policy</span><span data-l="pl">Polityka prywatności</span></a>
+  </nav>
+  <p class="muted">© Erza Studio</p>
+</footer>
+
+<script src="studio.js" defer></script>
 </body>
 </html>
