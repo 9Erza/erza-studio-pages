@@ -11,6 +11,8 @@
     root.setAttribute("data-lang", l);
     root.lang = l;
     $$(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-set") === l)); });
+    $$("[data-al-pl]").forEach(function (el) { el.setAttribute("aria-label", el.getAttribute(l === "pl" ? "data-al-pl" : "data-al-en")); });
+    var t = $("title"); if (t) { if (!t.getAttribute("data-en")) t.setAttribute("data-en", t.textContent); t.textContent = (l === "pl" && t.getAttribute("data-pl")) || t.getAttribute("data-en"); }
   }
   var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
   setLang(/^pl/i.test(nav) ? "pl" : "en");
@@ -37,7 +39,8 @@
   });
 
   /* scroll-driven: story bottles fill with scroll, hero card eases out */
-  var story = $("#how"), stage = $(".stage", story), bottles = $(".bottles", story), hero = $(".hero");
+  var story = $("#how"), stage = story && $(".stage", story), bottles = story && $(".bottles", story), hero = $(".hero");
+  if (!story || !hero) { initHero(false); return; }
   var ticking = false;
   function update() {
     ticking = false;

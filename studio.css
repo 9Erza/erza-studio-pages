@@ -163,6 +163,57 @@ h1 em,h2 em{font-style:normal;color:var(--accent);font-weight:300}
   .anim .story .label{margin-bottom:.5rem}
   .anim .story .copy{display:flex;flex-direction:column}
 }
+
+/* sub pages (game page, privacy policy) */
+.sub main{padding-top:4.5rem}
+.sub .top nav a{white-space:nowrap}
+@media (max-width:559px){.sub .top nav{display:none}.sub .top{justify-content:space-between}}
+.gp-hero{max-width:76rem;margin:0 auto;padding:clamp(1.5rem,5vw,4rem) var(--gut) 2rem;display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;align-items:center}
+.gp-card{padding:clamp(1.4rem,4vw,3rem)}
+.gp-card h1{font-size:clamp(3rem,13vw,6.4rem);margin-bottom:1.2rem}
+.buttons{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+.btn.ghost{background:transparent;color:var(--muted);border:1px dashed rgba(255,255,255,.28);box-shadow:none;cursor:default;font-weight:500}
+.btn.ghost:hover{transform:none;box-shadow:none}
+.btn.ghost-link{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.btn.ghost-link:hover{border-color:var(--accent);box-shadow:0 0 30px -10px var(--accent)}
+.gallery{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:1.2rem .3rem 1.6rem;margin:0 calc(var(--gut)*-1);padding-inline:var(--gut);scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+.gshot{flex:none;width:min(62vw,15rem);scroll-snap-align:center}
+.gshot img{width:100%;border-radius:20px;border:1px solid var(--line);box-shadow:0 24px 60px -24px rgba(0,0,0,.9),0 0 46px -14px var(--accent-glow)}
+.feats{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+.feat{padding:1.3rem 1.4rem}
+.feat .label{margin-bottom:.6rem}
+.feat h3{font-size:1.25rem;letter-spacing:.06em;margin-bottom:.6rem}
+.feat p:last-child{margin:0;color:var(--muted)}
+.fair{padding:clamp(1.3rem,4vw,2.4rem);max-width:46rem}
+.fair .lead{margin:0;color:var(--ink);max-width:none}
+.contact .btn{margin-top:.4rem}
+@media (min-width:860px){
+  .gp-hero{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:3rem}
+  .gallery{margin:0;padding-inline:.3rem 3rem;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .gshot{width:clamp(9rem,15vw,12.5rem)}
+  .gshot:nth-child(odd){transform:translateY(1.2rem)}
+  .feats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+.anim .reveal.feat:nth-child(3n+2){transition-delay:.08s}
+.anim .reveal.feat:nth-child(3n){transition-delay:.16s}
+
+/* privacy policy prose (content unchanged, only restyled) */
+.prose-page main{max-width:50rem;margin:0 auto;padding:6rem var(--gut) 3rem}
+.prose-page h1{font-size:clamp(1.9rem,6.5vw,3.2rem);margin-bottom:1rem}
+.prose-page h2{font-size:clamp(1.3rem,3.4vw,1.8rem);font-weight:300;margin:2.6rem 0 .8rem;letter-spacing:.04em;color:var(--ink)}
+.prose-page section{margin-top:1.5rem}
+.prose-page p,.prose-page li{color:#d3d9e3}
+.prose-page strong{color:var(--ink);font-weight:600}
+.prose-page a{color:var(--accent);text-underline-offset:3px}
+.prose-page ul{padding-left:1.2rem}
+.prose-page .langs a{display:inline-block;margin-right:.6rem;padding:.35rem .9rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.prose-page .langs a:hover{border-color:var(--accent)}
+.prose-page mark{background:rgba(247,201,72,.18);color:#f7d77a;padding:0 .3em;border-radius:4px}
+.prose-page .draft{border:1px solid rgba(247,201,72,.5);background:rgba(247,201,72,.07);border-radius:16px;padding:1rem 1.2rem;margin:1.2rem 0;color:var(--ink)}
+.prose-page table{border-collapse:collapse;width:100%;font-size:.92rem;display:block;overflow-x:auto;margin:1rem 0}
+.prose-page th,.prose-page td{border:1px solid var(--line);padding:.55rem .7rem;text-align:left;vertical-align:top}
+.prose-page th{background:rgba(255,255,255,.04);font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.prose-page section{scroll-margin-top:5rem}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .glow::after{display:none}
