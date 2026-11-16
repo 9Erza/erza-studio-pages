@@ -253,3 +253,19 @@ h1 em,h2 em{font-style:normal;color:var(--accent);font-weight:300}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .glow::after{display:none}
 }
+
+/* studio page: projects grid, project list in the hero */
+.plist{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.plist li{display:grid;grid-template-columns:auto 1fr;column-gap:.7rem;align-items:center}
+.plist b{font-weight:500}
+.plist em{grid-column:2;font-style:normal;color:var(--muted);font-size:.9rem}
+.pd{width:.6rem;height:.6rem;border-radius:50%;border:1.5px solid var(--accent)}
+.status{max-width:21rem}
+.proj-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.2rem;margin:2rem 0 1.5rem}
+.app-shot.phones{display:flex;justify-content:center;align-items:flex-end;gap:.6rem;aspect-ratio:16/10;background:radial-gradient(ellipse at 50% 120%,rgba(142,85,217,.45),#0b0f17 70%);padding:1rem 1rem 0}
+.app-shot.phones img{width:auto;height:92%;border-radius:12px 12px 0 0;border:1px solid var(--line);border-bottom:0}
+.app-shot.phones img:nth-of-type(odd){transform:translateY(8%)}
+.app-shot:not(.phones){aspect-ratio:16/10}
+.app-shot:not(.phones) img{height:100%;object-fit:cover;object-position:top left}
+@media (min-width:1080px){.proj-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:640px) and (max-width:1079px){.proj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

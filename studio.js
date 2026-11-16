@@ -66,30 +66,29 @@
     var COLORS = ["#E5484D", "#F7C948", "#1FB5C4", "#8E55D9", "#3FA2F6", "#F06BB0", "#8CD13F", "#F5822B"];
     var seed = 7; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
 
-    function sprite(color) {
-      var s = document.createElement("canvas"); s.width = 160; s.height = 300;
-      var c = s.getContext("2d"); c.translate(80, 150);
+    function sprite(color, kind) {
+      var s = document.createElement("canvas"); s.width = 160; s.height = 160;
+      var c = s.getContext("2d"); c.translate(80, 80);
       function path() {
-        c.beginPath(); c.moveTo(-18, -110); c.lineTo(18, -110); c.lineTo(18, -78);
-        c.quadraticCurveTo(38, -66, 38, -42); c.lineTo(38, 92); c.quadraticCurveTo(38, 112, 18, 112);
-        c.lineTo(-18, 112); c.quadraticCurveTo(-38, 112, -38, 92); c.lineTo(-38, -42);
-        c.quadraticCurveTo(-38, -66, -18, -78); c.closePath();
+        c.beginPath();
+        if (kind === 0) { c.arc(0, 0, 44, 0, 6.2832); }
+        else if (kind === 1) { var r = 14, w = 40; c.moveTo(-w + r, -w); c.arcTo(w, -w, w, w, r); c.arcTo(w, w, -w, w, r); c.arcTo(-w, w, -w, -w, r); c.arcTo(-w, -w, w, -w, r); }
+        else if (kind === 2) { for (var i = 0; i < 6; i++) { var a = Math.PI / 3 * i + Math.PI / 6; c[i ? "lineTo" : "moveTo"](Math.cos(a) * 46, Math.sin(a) * 46); } }
+        else if (kind === 3) { c.moveTo(0, -50); c.lineTo(34, 0); c.lineTo(0, 50); c.lineTo(-34, 0); }
+        else { c.arc(0, 0, 26, 0, 6.2832); }
+        c.closePath();
       }
-      c.save(); path(); c.clip();
-      c.shadowColor = color; c.shadowBlur = 26; c.fillStyle = color; c.globalAlpha = .9;
-      c.fillRect(-40, 8, 80, 110); c.restore();
-      c.shadowBlur = 0; c.globalAlpha = 1; path();
-      c.strokeStyle = "rgba(255,255,255,.4)"; c.lineWidth = 2; c.stroke();
-      c.fillStyle = "rgba(255,255,255,.05)"; c.fill();
+      path(); c.shadowColor = color; c.shadowBlur = 24; c.globalAlpha = kind === 4 ? .85 : .16; c.fillStyle = color; c.fill();
+      c.shadowBlur = kind === 4 ? 0 : 14; c.globalAlpha = kind === 4 ? 0 : .8; c.strokeStyle = color; c.lineWidth = 2; c.stroke();
       return s;
     }
-    COLORS.forEach(function (col) { sprites.push(sprite(col)); });
+    COLORS.forEach(function (col, i) { sprites.push(sprite(col, i % 5)); });
 
     function build() {
       var n = W < 700 ? 7 : 12; items = []; drops = [];
       for (var i = 0; i < n; i++) {
         var depth = .35 + rnd() * .9;
-        items.push({ x: rnd() * W, y: rnd() * (H + 200) - 100, s: depth * (W < 700 ? .55 : .8), vy: 5 + depth * 10, vx: (rnd() - .5) * 4,
+        items.push({ x: rnd() * W, y: rnd() * (H + 120) - 60, s: depth * (W < 700 ? .7 : 1), vy: 5 + depth * 10, vx: (rnd() - .5) * 4,
           r: (rnd() - .5) * .8, vr: (rnd() - .5) * .04, sp: sprites[i % sprites.length], a: .18 + depth * .32 });
       }
       for (var j = 0; j < 22; j++) drops.push({ x: rnd() * W, y: rnd() * H, r: 1.5 + rnd() * 3.5, vy: 6 + rnd() * 16, c: COLORS[j % COLORS.length], a: .25 + rnd() * .5 });
@@ -111,9 +110,9 @@
       ctx.shadowBlur = 0;
       for (i = 0; i < items.length; i++) {
         it = items[i]; it.y -= it.vy * dt; it.x += it.vx * dt; it.r += it.vr * dt;
-        if (it.y < -200) { it.y = H + 200; it.x = rnd() * W; }
+        if (it.y < -120) { it.y = H + 120; it.x = rnd() * W; }
         ctx.save(); ctx.globalAlpha = it.a; ctx.translate(it.x, it.y); ctx.rotate(it.r); ctx.scale(it.s, it.s);
-        ctx.drawImage(it.sp, -80, -150); ctx.restore();
+        ctx.drawImage(it.sp, -80, -80); ctx.restore();
       }
       ctx.globalAlpha = 1;
     }
