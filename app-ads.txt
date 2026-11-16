@@ -1,0 +1,3 @@
+# app-ads.txt for Erza Studio. Replace the placeholder with the AdMob publisher id (AdMob > Settings > Account information),
+# set SORTPUZZLE_ADMOB_PUBLISHER=pub-... and rebuild, or edit this line by hand. Uncomment it only with the real id.
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
