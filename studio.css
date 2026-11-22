@@ -228,7 +228,7 @@ html:not(.js) .prose-page .policy-language[data-l=pl]{display:block}
 .plist b{font-weight:500}
 .plist em{grid-column:2;font-style:normal;color:var(--muted);font-size:.9rem}
 .pd{width:.6rem;height:.6rem;border-radius:50%;border:1.5px solid var(--accent)}
-.status{max-width:21rem}
+.status{max-width:24rem}
 .proj-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.2rem;margin:2rem 0 1.5rem}
 .app-shot.phones{display:flex;justify-content:center;align-items:flex-end;gap:.6rem;aspect-ratio:16/10;background:radial-gradient(ellipse at 50% 120%,rgba(196,132,100,.40),#14110e 70%);padding:1rem 1rem 0}
 .app-shot.phones img{width:auto;height:92%;border-radius:12px 12px 0 0;border:1px solid var(--line);border-bottom:0}
@@ -413,3 +413,42 @@ section[id]{scroll-margin-top:5.5rem}
 @media (max-width:719px){
   .top nav a>span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 }
+
+/* ===== v4: project carousel (2 items = pair, 3+ = subtle carousel) ===== */
+.carousel{position:relative}
+.carousel::after{content:"";position:absolute;top:0;right:0;width:100px;height:calc(100% - 4rem);pointer-events:none;background:linear-gradient(90deg,transparent,var(--bg) 88%);opacity:0;transition:opacity .3s}
+.carousel.is-scrollable::after{opacity:1}
+.carousel-track{position:relative;display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.15rem .15rem .4rem}
+.carousel-track::-webkit-scrollbar{display:none}
+.carousel-card{flex:0 0 calc(45% - .6rem);scroll-snap-align:start;transition:opacity .4s,transform .4s}
+.carousel.is-pair .carousel-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}
+.carousel.is-pair .carousel-card{flex:1 1 auto}
+.carousel.is-single .carousel-track{display:block;overflow:visible}
+.carousel.is-single .carousel-card{width:100%}
+.carousel.is-scrollable .carousel-card{opacity:.55;transform:scale(.985)}
+.carousel.is-scrollable .carousel-card.is-active{opacity:1;transform:none}
+.carousel-controls{display:none;align-items:center;justify-content:center;gap:1rem;margin-top:1.1rem}
+.carousel.is-scrollable .carousel-controls{display:flex}
+.carousel-arrow{width:2.4rem;height:2.4rem;padding:0;border-radius:50%;border:1px solid var(--line);background:rgba(255,244,228,.04);color:var(--ink);font:400 1rem var(--sans);cursor:pointer}
+.carousel-arrow:hover{border-color:var(--accent);color:var(--accent)}
+.carousel-dots{display:flex;align-items:center;gap:.75rem}
+.carousel-dot{position:relative;width:1.75rem;height:1.75rem;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer}
+.carousel-dot::before{content:"";position:absolute;top:50%;left:50%;width:.5rem;height:.5rem;border-radius:50%;background:rgba(255,244,228,.30);transform:translate(-50%,-50%)}
+.carousel-dot[aria-current=true]::before{background:var(--accent);box-shadow:0 0 10px var(--accent-glow)}
+.carousel-note{margin:1.1rem 0 0;color:var(--muted);font-size:.95rem}
+.carousel-note a{color:var(--accent);text-underline-offset:3px}
+.product-visual.desk{padding:1.1rem;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 118%,rgba(232,168,124,.14),rgba(18,14,10,.65) 64%)}
+.product-visual.desk img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 44px -22px #000}
+@media (max-width:900px){
+  .carousel-track{gap:.9rem}
+  .carousel-card{flex-basis:100%}
+  .carousel.is-pair .carousel-track{grid-template-columns:minmax(0,1fr);gap:1rem}
+  .carousel::after{display:none}
+}
+.carousel.is-scrollable .carousel-card:not(.is-active) .product-body{opacity:0;visibility:hidden;transition:opacity .3s}
+@media (max-width:900px){
+  .carousel{display:flex;flex-direction:column}
+  .carousel-track{order:2}
+  .carousel-controls{order:1;margin:0 0 .9rem}
+}
+.work .carousel{margin-top:1.6rem}

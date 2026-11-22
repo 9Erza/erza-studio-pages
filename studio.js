@@ -19,6 +19,7 @@
     if (ot && ot.getAttribute("data-pl")) ot.setAttribute("content", ot.getAttribute(l === "pl" ? "data-pl" : "data-en"));
     var od = $('meta[property="og:description"]');
     if (od && od.getAttribute("data-pl")) od.setAttribute("content", od.getAttribute(l === "pl" ? "data-pl" : "data-en"));
+    document.dispatchEvent(new CustomEvent("erza:lang", { detail: l }));
   }
   var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
   setLang(/^pl/i.test(nav) ? "pl" : "en");
@@ -46,6 +47,8 @@
     frames.forEach(function (f) { f.style.cursor = "default"; });
   }
 
+  initCarousel();
+
   if (reduce) { initHero(true); return; }
   root.classList.add("anim");
 
@@ -67,6 +70,100 @@
   });
 
   initHero(false);
+
+
+  /* project carousel: two cards side by side; three or more get a subtle, pausable carousel */
+  function initCarousel() {
+    var carousel = $("[data-carousel]");
+    if (!carousel) return;
+    var track = $("[data-track]", carousel);
+    var cards = $$(".carousel-card", track);
+    var dotsBox = $("[data-dots]", carousel);
+    var prev = $("[data-prev]", carousel);
+    var next = $("[data-next]", carousel);
+    if (!track || cards.length === 0) return;
+
+    var n = cards.length;
+    carousel.classList.toggle("is-single", n === 1);
+    carousel.classList.toggle("is-pair", n === 2);
+    carousel.classList.toggle("is-scrollable", n > 2);
+    if (n < 3) return;
+
+    var dots = [];
+    var paused = false;
+    var offscreen = false;
+    var timer = null;
+
+    function gap() {
+      var g = getComputedStyle(track).columnGap || getComputedStyle(track).gap;
+      return parseFloat(g) || 0;
+    }
+    function step() { return cards[0].getBoundingClientRect().width + gap(); }
+    function maxScroll() { return Math.max(0, track.scrollWidth - track.clientWidth); }
+    function scrollToCard(i) {
+      var left = Math.min(maxScroll(), Math.max(0, i * step()));
+      track.scrollTo({ left: left, behavior: reduce ? "auto" : "smooth" });
+    }
+    function updateDots(lang) {
+      dots.forEach(function (dot, i) {
+        dot.setAttribute("aria-label", (lang === "pl" ? "Projekt " : "Project ") + (i + 1));
+      });
+    }
+    function update() {
+      var left = track.scrollLeft;
+      var index = Math.min(n - 1, Math.round(left / step()));
+      dots.forEach(function (dot, i) { dot.setAttribute("aria-current", i === index ? "true" : "false"); });
+      var centre = left + track.clientWidth / 2;
+      cards.forEach(function (card) {
+        var cardCentre = card.offsetLeft + card.offsetWidth / 2;
+        card.classList.toggle("is-active", Math.abs(cardCentre - centre) <= card.offsetWidth * 0.75);
+      });
+    }
+    function move(delta) {
+      var atEnd = track.scrollLeft >= maxScroll() - 8;
+      if (delta > 0 && atEnd) { scrollToCard(0); return; }
+      if (delta < 0 && track.scrollLeft <= 8) { scrollToCard(n - 1); return; }
+      track.scrollBy({ left: delta * step(), behavior: reduce ? "auto" : "smooth" });
+    }
+
+    for (var i = 0; i < n; i++) {
+      (function (index) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel-dot";
+        dot.addEventListener("click", function () { scrollToCard(index); });
+        dotsBox.appendChild(dot);
+        dots.push(dot);
+      })(i);
+    }
+    updateDots(root.getAttribute("data-lang") || "en");
+    document.addEventListener("erza:lang", function (e) { updateDots(e.detail); });
+
+    if (prev) prev.addEventListener("click", function () { move(-1); });
+    if (next) next.addEventListener("click", function () { move(1); });
+    track.addEventListener("scroll", function () {
+      if (track._raf) return;
+      track._raf = requestAnimationFrame(function () { track._raf = null; update(); });
+    }, { passive: true });
+    addEventListener("resize", update);
+    carousel.addEventListener("pointerenter", function () { paused = true; });
+    carousel.addEventListener("pointerleave", function () { paused = false; });
+    carousel.addEventListener("focusin", function () { paused = true; });
+    carousel.addEventListener("focusout", function () { paused = false; });
+    document.addEventListener("visibilitychange", function () { if (document.hidden) paused = true; else paused = false; });
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) { offscreen = !es[0].isIntersecting; }).observe(carousel);
+    }
+    update();
+    if (!reduce) {
+      timer = setInterval(function () {
+        if (paused || offscreen || document.hidden || maxScroll() <= 0) return;
+        if (track.scrollLeft >= maxScroll() - 8) scrollToCard(0);
+        else track.scrollBy({ left: step(), behavior: "smooth" });
+      }, 8000);
+    }
+  }
 
   /* hero: soft drifting shapes and drops on a canvas (paused offscreen / in background tabs) */
   function initHero(still) {

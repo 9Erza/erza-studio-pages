@@ -52,7 +52,7 @@
     <aside class="glass glow status reveal" aria-label="Projects" data-al-en="Projects" data-al-pl="Projekty">
       <p class="label">// <span data-l="en">PROJECTS</span><span data-l="pl">PROJEKTY</span></p>
       <ul class="plist">
-        <li><span class="pd" aria-hidden="true"></span><b><a href="sortpuzzle/">Sort Puzzle</a></b><em><span data-l="en">Color puzzle · Android in testing</span><span data-l="pl">Łamigłówka z kolorami · Android w testach</span></em></li>
+        <li><span class="pd" aria-hidden="true"></span><b><a href="sortpuzzle/">Sort Puzzle</a></b><em><span data-l="en">Color puzzle · Android in testing, iOS later</span><span data-l="pl">Łamigłówka · Android w testach, iOS później</span></em></li>
         <li><span class="pd" aria-hidden="true"></span><b><a href="sippo/">Sippo</a></b><em><span data-l="en">Water habit · in development</span><span data-l="pl">Nawyk picia wody · w budowie</span></em></li>
       </ul>
     </aside>
@@ -62,11 +62,12 @@
 
 <section class="section work" id="work" aria-labelledby="work-h">
   <p class="label reveal">01 · <span data-l="en">GAMES &amp; APPS</span><span data-l="pl">GRY I APLIKACJE</span></p>
-  <h2 id="work-h" class="reveal"><span data-l="en">Two things<br><em>for your phone.</em></span><span data-l="pl">Dwie rzeczy<br><em>na telefon.</em></span></h2>
-  <p class="lead reveal"><span data-l="en">One is in testing on Android, the other is still being built. Both do one thing and don’t pretend to be more.</span><span data-l="pl">Jedna jest w testach na Androidzie, druga dopiero powstaje. Obie robią jedną rzecz i nie udają, że są czymś więcej.</span></p>
+  <h2 id="work-h" class="reveal"><span data-l="en">Apps for<br><em>your phone.</em></span><span data-l="pl">Aplikacje<br><em>na telefon.</em></span></h2>
+  <p class="lead reveal"><span data-l="en">Small apps for a few free minutes. They do one thing and don’t pretend to be more.</span><span data-l="pl">Małe aplikacje na kilka wolnych minut. Robią jedną rzecz i nie udają, że są czymś więcej.</span></p>
 
-  <div class="work-grid">
-    <article class="glass glow product reveal">
+  <div class="carousel" data-carousel role="region" aria-label="Apps for your phone" data-al-en="Apps for your phone" data-al-pl="Aplikacje na telefon">
+    <div class="carousel-track" data-track tabindex="0" aria-label="Apps for your phone" data-al-en="Apps for your phone" data-al-pl="Aplikacje na telefon">
+    <article class="glass glow product carousel-card reveal">
       <a class="product-visual" href="sortpuzzle/" tabindex="-1" aria-hidden="true">
         <div class="fan">
           <span class="phone"><img data-l="en" src="sortpuzzle/shots/menu-en.webp?v=2" width="1080" height="1920" loading="lazy" decoding="async" alt=""><img data-l="pl" src="sortpuzzle/shots/menu-pl.webp?v=2" width="1080" height="1920" loading="lazy" decoding="async" alt=""></span>
@@ -75,15 +76,15 @@
         </div>
       </a>
       <div class="product-body">
-        <p class="label">// <span data-l="en">ANDROID IN TESTING</span><span data-l="pl">ANDROID W TESTACH</span></p>
+        <p class="label">// <span data-l="en">ANDROID IN TESTING · iOS LATER</span><span data-l="pl">ANDROID W TESTACH · iOS PÓŹNIEJ</span></p>
         <h3>Sort Puzzle</h3>
-        <p><span data-l="en">A color puzzle for a few free minutes. Pour colors between bottles, play offline and use undo as often as you like.</span><span data-l="pl">Kolorowa łamigłówka na kilka wolnych minut. Przelewaj kolory między butelkami, graj offline i cofaj ruchy, ile chcesz.</span></p>
+        <p><span data-l="en">A color puzzle for a few free minutes. Built for iOS and Android; Google Play first, App Store later.</span><span data-l="pl">Kolorowa łamigłówka na kilka wolnych minut. Zbudowana na iOS i Androida; najpierw Google Play, potem App Store.</span></p>
         <ul class="chips" aria-label="Tags" data-al-en="Tags" data-al-pl="Tagi"><li><span data-l="en">colors</span><span data-l="pl">kolory</span></li><li>offline</li><li><span data-l="en">no account</span><span data-l="pl">bez konta</span></li></ul>
         <p class="product-links"><a class="btn" href="sortpuzzle/"><span data-l="en">About Sort Puzzle</span><span data-l="pl">O Sort Puzzle</span> <span aria-hidden="true">→</span></a></p>
       </div>
     </article>
 
-    <article class="glass glow product reveal">
+    <article class="glass glow product carousel-card reveal">
       <a class="product-visual" href="sippo/" tabindex="-1" aria-hidden="true">
         <div class="fan">
           <span class="phone"><img data-l="en" src="sippo/shots/collection-en.webp?v=2" width="1080" height="2341" loading="lazy" decoding="async" alt=""><img data-l="pl" src="sippo/shots/collection-pl.webp?v=2" width="1080" height="2341" loading="lazy" decoding="async" alt=""></span>
@@ -99,6 +100,12 @@
         <p class="product-links"><a class="btn" href="sippo/"><span data-l="en">About Sippo</span><span data-l="pl">O Sippo</span> <span aria-hidden="true">→</span></a></p>
       </div>
     </article>
+    </div>
+    <div class="carousel-controls">
+      <button type="button" class="carousel-arrow" data-prev aria-label="Previous app" data-al-en="Previous app" data-al-pl="Poprzednia aplikacja">←</button>
+      <div class="carousel-dots" data-dots></div>
+      <button type="button" class="carousel-arrow" data-next aria-label="Next app" data-al-en="Next app" data-al-pl="Następna aplikacja">→</button>
+    </div>
   </div>
 </section>
 
