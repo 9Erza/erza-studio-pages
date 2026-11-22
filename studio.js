@@ -72,7 +72,7 @@
   function initHero(still) {
     var cv = $("#bg"); if (!cv || !cv.getContext) return;
     var ctx = cv.getContext("2d"), W = 0, H = 0, dpr = 1, items = [], drops = [], sprites = [];
-    var COLORS = ["#E5484D", "#F7C948", "#1FB5C4", "#8E55D9", "#3FA2F6", "#F06BB0", "#8CD13F", "#F5822B"];
+    var COLORS = ["#E07A5F", "#E9B26B", "#7FA88A", "#C98B7A", "#8AA6A0", "#D98E73", "#A8B57A", "#E3A86F"];
     var seed = 7; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
 
     function sprite(color, kind) {
