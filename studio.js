@@ -18,6 +18,28 @@
   setLang(/^pl/i.test(nav) ? "pl" : "en");
   $$(".lang button").forEach(function (b) { b.addEventListener("click", function () { setLang(b.getAttribute("data-set")); }); });
 
+  /* screenshot lightbox: any .frame button opens its visible (current-language) image full size */
+  var frames = $$(".frame");
+  if (frames.length && window.HTMLDialogElement) {
+    var dlg = document.createElement("dialog"); dlg.className = "lb";
+    dlg.innerHTML = '<button type="button" aria-label="Close">✕</button><img alt=""><p></p>';
+    document.body.appendChild(dlg);
+    var dImg = $("img", dlg), dCap = $("p", dlg), dBtn = $("button", dlg);
+    dBtn.addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    frames.forEach(function (f) {
+      f.addEventListener("click", function () {
+        var img = $$("img", f).filter(function (i) { return i.offsetParent !== null; })[0] || $("img", f);
+        if (!img) return;
+        dImg.src = img.currentSrc || img.src; dImg.alt = img.alt; dCap.textContent = img.alt;
+        dBtn.setAttribute("aria-label", root.getAttribute("data-lang") === "pl" ? "Zamknij" : "Close");
+        dlg.showModal();
+      });
+    });
+  } else {
+    frames.forEach(function (f) { f.style.cursor = "default"; });
+  }
+
   if (reduce) { initHero(true); return; }
   root.classList.add("anim");
 

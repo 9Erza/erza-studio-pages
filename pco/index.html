@@ -6,51 +6,185 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#06070b">
 <title data-pl="Process Core Optimizer · Erza Studio">Process Core Optimizer · Erza Studio</title>
-<meta name="description" content="Process Core Optimizer (PCO): an open-source (MIT) Windows utility for process affinity, CPU Sets, priorities and automatic profiles.">
+<meta name="description" content="Process Core Optimizer (PCO) 2.1: a free, open-source (MIT) Windows tool for CPU affinity, CPU Sets, process priorities, automatic profiles and smart rules.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../studio.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
-<body class="sub ">
+<body class="sub">
 <a class="skip" href="#main"><span data-l="en">Skip to content</span><span data-l="pl">Przejdź do treści</span></a>
-<header class="top"><a class="brand" href="../" aria-label="Erza Studio"><span class="dot" aria-hidden="true"></span>ERZA STUDIO</a><nav aria-label="Main" data-al-en="Main" data-al-pl="Główna"><a href="../">Studio</a><a href="../sortpuzzle/">Sort Puzzle</a><a href="../framehub/">FrameHub</a><a href="../pco/">PCO</a></nav><div class="lang" role="group" aria-label="Language" data-al-en="Language" data-al-pl="Język"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="pl" aria-pressed="false">PL</button></div></header>
+<header class="top"><a class="brand" href="../" aria-label="Erza Studio"><span class="dot" aria-hidden="true"></span>ERZA STUDIO</a><nav aria-label="Main" data-al-en="Main" data-al-pl="Główna"><a href="../">Studio</a><a href="../sortpuzzle/">Sort Puzzle</a><a href="../framehub/">FrameHub</a><a href="../pco/" aria-current="page">PCO</a></nav><div class="lang" role="group" aria-label="Language" data-al-en="Language" data-al-pl="Język"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="pl" aria-pressed="false">PL</button></div></header>
 <main id="main">
 
 <section class="gp-hero app-hero">
   <div class="glass glow gp-card reveal">
     <p class="label">// OPEN SOURCE · <span data-l="en">FREE · MIT LICENSE</span><span data-l="pl">DARMOWE · LICENCJA MIT</span></p>
     <h1 class="app-h1">Process Core<br><em>Optimizer.</em></h1>
-    <p class="lead"><span data-l="en">Direct Windows process and CPU control: affinity, CPU Sets, priorities and profiles.</span><span data-l="pl">Bezpośrednia kontrola procesów i CPU w Windows: affinity, CPU Sets, priorytety i profile.</span></p>
-    <ul class="chips" aria-label="Details" data-al-en="Details" data-al-pl="Szczegóły"><li>v2.0.0</li><li>Windows 10/11 x64</li><li>C# · .NET 10</li><li>MIT</li></ul>
-    <div class="buttons"><a class="btn" href="https://github.com/9Erza/ProcessCoreOptimizer/releases/tag/v2.0.0" rel="noopener"><span data-l="en">Download</span><span data-l="pl">Pobierz</span> v2.0.0</a><a class="btn ghost-link" href="https://github.com/9Erza/ProcessCoreOptimizer" rel="noopener"><span data-l="en">Source on GitHub</span><span data-l="pl">Kod na GitHubie</span></a></div>
+    <p class="lead"><span data-l="en">Decide which Windows process runs on which CPU cores, at what priority and when. Every change is explicit, reversible and logged.</span><span data-l="pl">Zdecyduj, który proces Windows działa na których rdzeniach CPU, z jakim priorytetem i kiedy. Każda zmiana jest jawna, odwracalna i logowana.</span></p>
+    <ul class="chips" aria-label="Details" data-al-en="Details" data-al-pl="Szczegóły"><li>v2.1.0</li><li>Windows 10/11 x64</li><li>EN · PL</li><li>MIT</li></ul>
+    <div class="buttons"><a class="btn" href="https://github.com/9Erza/ProcessCoreOptimizer/releases/download/v2.1.0/ProcessCoreOptimizer_Setup_2.1.0.exe" rel="noopener"><span data-l="en">Download</span><span data-l="pl">Pobierz</span> v2.1.0</a><a class="btn ghost-link" href="https://github.com/9Erza/ProcessCoreOptimizer" rel="noopener"><span data-l="en">Source on GitHub</span><span data-l="pl">Kod na GitHubie</span></a></div>
   </div>
-  <div class="app-right reveal"><div class="gallery wide" tabindex="0" aria-label="Screenshots" data-al-en="Screenshots" data-al-pl="Zrzuty ekranu"><div class="wshot"><img src="shots/pco-processes.webp" width="1200" height="880" loading="lazy" decoding="async" alt="Process Core Optimizer: Process list with CPU core selection / Lista procesów z wyborem rdzeni CPU"></div></div><p class="shotnote"><span data-l="en">Screenshots show the Polish interface; the app also has English.</span><span data-l="pl">Zrzuty pokazują polski interfejs; aplikacja ma też angielski.</span></p></div>
+  <div class="app-right reveal">
+    <button type="button" class="frame" aria-label="Enlarge screenshot" data-al-en="Enlarge screenshot" data-al-pl="Powiększ zrzut ekranu"><img data-l="en" src="shots/processes-pl.webp" width="1280" height="800" decoding="async" fetchpriority="high" alt="System processes view with the core picker and process details"><img data-l="pl" src="shots/processes-pl.webp" width="1280" height="800" decoding="async" alt="Widok procesów systemowych z wyborem rdzeni i szczegółami procesu"></button>
+    <p class="shotnote" data-l="en">Screenshots currently show the Polish interface; the app is fully available in English.</p>
+  </div>
 </section>
-<section class="section" aria-labelledby="what-h">
-  <p class="label reveal">01 · <span data-l="en">WHAT IT DOES</span><span data-l="pl">CO ROBI</span></p>
-  <h2 id="what-h" class="reveal"><span data-l="en">What<br><em>it does.</em></span><span data-l="pl">Co<br><em>potrafi.</em></span></h2>
-  <p class="lead reveal"><span data-l="en">A lightweight desktop tool for advanced users who want to decide which process runs on which cores, at which priority, and when. No black-box boosters.</span><span data-l="pl">Lekkie narzędzie dla zaawansowanych użytkowników, którzy chcą sami decydować, który proces działa na których rdzeniach, z jakim priorytetem i kiedy. Bez tajemniczych boosterów.</span></p>
-  <ul class="feats"><li class="glass glow feat reveal"><p class="label">01</p><h3><span data-l="en">Priority management</span><span data-l="pl">Zarządzanie priorytetem</span></h3><p><span data-l="en">Set a process priority from Idle to High. RealTime stays hidden behind an explicit opt-in.</span><span data-l="pl">Ustaw priorytet procesu od Idle do High. RealTime jest ukryty za jawną zgodą.</span></p></li><li class="glass glow feat reveal"><p class="label">02</p><h3><span data-l="en">Affinity and CPU Sets</span><span data-l="pl">Affinity i CPU Sets</span></h3><p><span data-l="en">Two different modes: Affinity is a hard binding, CPU Sets is a scheduling preference. PCO explains the difference instead of mixing them up.</span><span data-l="pl">Dwa różne tryby: Affinity to twarde przypięcie, CPU Sets to preferencja planisty. PCO tłumaczy różnicę zamiast je mieszać.</span></p></li><li class="glass glow feat reveal"><p class="label">03</p><h3><span data-l="en">Profiles and a watcher</span><span data-l="pl">Profile i obserwator</span></h3><p><span data-l="en">Save per-process settings (optionally bound to an exact EXE path) and let a background watcher apply them when the process starts.</span><span data-l="pl">Zapisz ustawienia procesu (opcjonalnie dla dokładnej ścieżki EXE), a obserwator w tle zastosuje je przy starcie procesu.</span></p></li><li class="glass glow feat reveal"><p class="label">04</p><h3><span data-l="en">Identity-safe changes</span><span data-l="pl">Zmiany z weryfikacją tożsamości</span></h3><p><span data-l="en">Before every write PCO re-checks PID, start time, name and path. Recycled PIDs are refused, never guessed.</span><span data-l="pl">Przed każdym zapisem PCO sprawdza PID, czas startu, nazwę i ścieżkę. Powtórnie użyte PID-y są odrzucane, nigdy zgadywane.</span></p></li><li class="glass glow feat reveal"><p class="label">05</p><h3><span data-l="en">P/E-core and SMT aware</span><span data-l="pl">Rozpoznaje rdzenie P/E i SMT</span></h3><p><span data-l="en">Reads the CPU topology, labels P, E and SMT threads, and says Unknown when the firmware doesn't tell it, with named core presets.</span><span data-l="pl">Czyta topologię CPU, oznacza rdzenie P, E i wątki SMT, a gdy firmware nie podaje danych, pisze Unknown. Są nazwane układy rdzeni.</span></p></li><li class="glass glow feat reveal"><p class="label">06</p><h3><span data-l="en">Session restore and telemetry</span><span data-l="pl">Przywracanie sesji i telemetria</span></h3><p><span data-l="en">One click returns processes to their pre-optimization state. Optional CPU, GPU and RAM monitoring is off by default. The UI is in English and Polish.</span><span data-l="pl">Jedno kliknięcie przywraca procesy do stanu sprzed optymalizacji. Opcjonalny monitor CPU, GPU i RAM jest domyślnie wyłączony. Interfejs po polsku i angielsku.</span></p></li></ul>
+
+<section class="section" aria-labelledby="new-h">
+  <p class="label reveal">01 · <span data-l="en">NEW IN 2.1</span><span data-l="pl">NOWOŚCI W 2.1</span></p>
+  <h2 id="new-h" class="h-sm reveal"><span data-l="en">Redesigned,<br><em>faster, fixed.</em></span><span data-l="pl">Nowy wygląd,<br><em>szybciej, stabilniej.</em></span></h2>
+  <ul class="news">
+    <li class="reveal"><b><span data-l="en">Interface 2.1</span><span data-l="pl">Interfejs 2.1</span></b><span><span data-l="en">A minimal dark design with an icon sidebar, cards, toggles and filter chips across every view.</span><span data-l="pl">Minimalistyczny ciemny wygląd: boczna nawigacja z ikonami, karty, przełączniki i filtry we wszystkich widokach.</span></span></li>
+    <li class="reveal"><b><span data-l="en">Native Windows 11 window</span><span data-l="pl">Natywne okno Windows 11</span></b><span><span data-l="en">Rounded corners, Snap Layouts, a dark frame and GPU composition instead of software rendering.</span><span data-l="pl">Zaokrąglone rogi, Snap Layouts, ciemna ramka i renderowanie przez GPU zamiast programowego.</span></span></li>
+    <li class="reveal"><b><span data-l="en">Reliable autostart</span><span data-l="pl">Niezawodny autostart</span></b><span><span data-l="en">Registered with Windows, repaired on launch, un-blocked when disabled in Task Manager, with a Repair button.</span><span data-l="pl">Rejestrowany w Windows, naprawiany przy starcie, odblokowywany po wyłączeniu w Menedżerze zadań, z przyciskiem Napraw.</span></span></li>
+    <li class="reveal"><b><span data-l="en">CPU engine fixes</span><span data-l="pl">Poprawki silnika CPU</span></b><span><span data-l="en">Path-bound profiles work with elevated and anti-cheat games, drift is re-applied, manual Apply is no longer reverted.</span><span data-l="pl">Profile ze ścieżką działają z grami jako administrator i z anty-cheatem, rozjazdy są poprawiane, ręczne Zastosuj nie jest cofane.</span></span></li>
+  </ul>
 </section>
+
+<section class="section" aria-labelledby="tour-h">
+  <p class="label reveal">02 · <span data-l="en">A LOOK INSIDE</span><span data-l="pl">ZAJRZYJ DO ŚRODKA</span></p>
+  <h2 id="tour-h" class="reveal"><span data-l="en">What<br><em>it does.</em></span><span data-l="pl">Co<br><em>potrafi.</em></span></h2>
+  <p class="lead reveal"><span data-l="en">A lightweight tool for people who want direct control instead of black-box boosters. Click any screenshot to enlarge it.</span><span data-l="pl">Lekkie narzędzie dla osób, które chcą realnej kontroli zamiast tajemniczych „przyspieszaczy”. Kliknij zrzut, aby go powiększyć.</span></p>
+
+  <div class="tour">
+    <article class="tour-row">
+      <div class="tour-shot reveal"><button type="button" class="frame" aria-label="Enlarge screenshot" data-al-en="Enlarge screenshot" data-al-pl="Powiększ zrzut ekranu"><img data-l="en" src="shots/processes-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="System processes: process list, core picker, priority and CPU mode"><img data-l="pl" src="shots/processes-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Procesy systemowe: lista procesów, wybór rdzeni, priorytet i tryb CPU"></button></div>
+      <div class="reveal">
+        <p class="label">// <span data-l="en">SYSTEM PROCESSES</span><span data-l="pl">PROCESY SYSTEMOWE</span></p>
+        <h3><span data-l="en">Pick a process, pick the cores</span><span data-l="pl">Wybierz proces, wybierz rdzenie</span></h3>
+        <p><span data-l="en">Find a process, tick the logical processors it may use, choose the priority and apply. PCO shows exactly what it changed.</span><span data-l="pl">Znajdź proces, zaznacz procesory logiczne, których może używać, wybierz priorytet i zastosuj. PCO pokazuje dokładnie, co zmienił.</span></p>
+        <ul class="ticks">
+          <li><span data-l="en">Grouped or per-PID view, search, path filters and numeric sorting</span><span data-l="pl">Widok grup lub pojedynczych PID, wyszukiwanie, filtry ścieżek i sortowanie liczbowe</span></li>
+          <li><span data-l="en">Priority from Idle to High; RealTime only behind an explicit opt-in</span><span data-l="pl">Priorytet od Idle do High; RealTime tylko po wyraźnej zgodzie</span></li>
+          <li><span data-l="en">Quick tools: select all, clear, disable SMT/HT threads, disable E-cores</span><span data-l="pl">Szybkie narzędzia: zaznacz wszystko, wyczyść, wyłącz wątki SMT/HT, wyłącz rdzenie E</span></li>
+          <li><span data-l="en">One click restores the pre-optimization state</span><span data-l="pl">Jedno kliknięcie przywraca stan sprzed optymalizacji</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="tour-row">
+      <div class="tour-shot reveal"><button type="button" class="frame" aria-label="Enlarge screenshot" data-al-en="Enlarge screenshot" data-al-pl="Powiększ zrzut ekranu"><img data-l="en" src="shots/cpu-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="CPU and topology: core map with P, E and SMT labels and core presets"><img data-l="pl" src="shots/cpu-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="CPU i topologia: mapa rdzeni z oznaczeniami P, E i SMT oraz presety rdzeni"></button></div>
+      <div class="reveal">
+        <p class="label">// <span data-l="en">CPU &amp; TOPOLOGY</span><span data-l="pl">CPU I TOPOLOGIA</span></p>
+        <h3><span data-l="en">Know your processor</span><span data-l="pl">Poznaj swój procesor</span></h3>
+        <p><span data-l="en">A read-only map of your CPU: physical cores, SMT threads, and performance vs efficiency cores on hybrid chips.</span><span data-l="pl">Podgląd procesora tylko do odczytu: rdzenie fizyczne, wątki SMT oraz rdzenie wydajnościowe i energooszczędne w procesorach hybrydowych.</span></p>
+        <ul class="ticks">
+          <li><span data-l="en">[P], [T] and [E] labels; honest “Unknown” when the firmware doesn't say</span><span data-l="pl">Oznaczenia [P], [T] i [E]; uczciwe „nieznany”, gdy firmware nie podaje danych</span></li>
+          <li><span data-l="en">Named core presets: all, P-cores, E-cores, physical without SMT</span><span data-l="pl">Nazwane presety rdzeni: wszystkie, rdzenie P, rdzenie E, fizyczne bez SMT</span></li>
+          <li><span data-l="en">Works the same on Intel Hybrid and AMD SMT</span><span data-l="pl">Działa tak samo na Intel Hybrid i AMD SMT</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="tour-row">
+      <div class="tour-shot reveal"><button type="button" class="frame" aria-label="Enlarge screenshot" data-al-en="Enlarge screenshot" data-al-pl="Powiększ zrzut ekranu"><img data-l="en" src="shots/profiles-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Saved profiles: per-process settings applied automatically by the watcher"><img data-l="pl" src="shots/profiles-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Zapisane profile: ustawienia procesów stosowane automatycznie przez watcher"></button></div>
+      <div class="reveal">
+        <p class="label">// <span data-l="en">SAVED PROFILES</span><span data-l="pl">ZAPISANE PROFILE</span></p>
+        <h3><span data-l="en">Set it once, keep it</span><span data-l="pl">Ustaw raz, działa zawsze</span></h3>
+        <p><span data-l="en">Save cores, CPU mode and priority as a profile. A lightweight watcher applies enabled profiles whenever the process starts.</span><span data-l="pl">Zapisz rdzenie, tryb CPU i priorytet jako profil. Lekki watcher w tle stosuje włączone profile za każdym razem, gdy proces startuje.</span></p>
+        <ul class="ticks">
+          <li><span data-l="en">Bind a profile to an exact EXE path; a different file with the same name is never touched</span><span data-l="pl">Przypnij profil do dokładnej ścieżki EXE; inny plik o tej samej nazwie nie zostanie ruszony</span></li>
+          <li><span data-l="en">Profile editor with validation, EcoQoS on/off, duplicate, import and export</span><span data-l="pl">Edytor profili z walidacją, EcoQoS wł./wył., duplikowanie, import i eksport</span></li>
+          <li><span data-l="en">Deterministic conflict handling: path-bound wins over name-only</span><span data-l="pl">Przewidywalne konflikty: profil ze ścieżką wygrywa z profilem po nazwie</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="tour-row">
+      <div class="tour-shot reveal"><button type="button" class="frame" aria-label="Enlarge screenshot" data-al-en="Enlarge screenshot" data-al-pl="Powiększ zrzut ekranu"><img data-l="en" src="shots/rules-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Smart rules: create a rule that applies a profile on process start or focus"><img data-l="pl" src="shots/rules-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Smart Rules: zastosuj profil, gdy proces startuje lub trafia na pierwszy plan"></button></div>
+      <div class="reveal">
+        <p class="label">// SMART RULES</p>
+        <h3><span data-l="en">React to what you do</span><span data-l="pl">Reaguje na to, co robisz</span></h3>
+        <p><span data-l="en">Rules apply a profile when a process starts or when its window comes to the foreground.</span><span data-l="pl">Reguły stosują profil, gdy proces startuje albo gdy jego okno trafia na pierwszy plan.</span></p>
+        <ul class="ticks">
+          <li><span data-l="en">Debounce, cooldowns, rule priorities and a global pause</span><span data-l="pl">Opóźnienie, cooldowny, priorytety reguł i globalna pauza</span></li>
+          <li><span data-l="en">An activity feed that explains why each rule fired</span><span data-l="pl">Dziennik aktywności, który wyjaśnia, dlaczego reguła zadziałała</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="tour-row">
+      <div class="tour-shot reveal"><button type="button" class="frame" aria-label="Enlarge screenshot" data-al-en="Enlarge screenshot" data-al-pl="Powiększ zrzut ekranu"><img data-l="en" src="shots/hardware-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Hardware monitor: live CPU, GPU and RAM sensors"><img data-l="pl" src="shots/hardware-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Monitor sprzętu: czujniki CPU, GPU i RAM na żywo"></button></div>
+      <div class="reveal">
+        <p class="label">// <span data-l="en">HARDWARE MONITOR</span><span data-l="pl">MONITOR SPRZĘTU</span></p>
+        <h3><span data-l="en">Live sensors, only if you want them</span><span data-l="pl">Czujniki na żywo, tylko gdy chcesz</span></h3>
+        <p><span data-l="en">CPU, GPU and RAM usage and temperatures. Off by default to save resources; one switch turns it on.</span><span data-l="pl">Użycie i temperatury CPU, GPU oraz RAM. Domyślnie wyłączone, aby oszczędzać zasoby; włączasz jednym przełącznikiem.</span></p>
+        <ul class="ticks">
+          <li><span data-l="en">Read lazily through LibreHardwareMonitor, only while the view is on</span><span data-l="pl">Odczyt przez LibreHardwareMonitor, tylko gdy monitor jest włączony</span></li>
+          <li><span data-l="en">Shows a dash instead of a made-up value when a sensor isn't available</span><span data-l="pl">Pokazuje kreskę zamiast zmyślonej wartości, gdy czujnik jest niedostępny</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="tour-row">
+      <div class="tour-shot reveal"><button type="button" class="frame" aria-label="Enlarge screenshot" data-al-en="Enlarge screenshot" data-al-pl="Powiększ zrzut ekranu"><img data-l="en" src="shots/diagnostics-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Diagnostics: watcher status, profile conflicts, recent operations and the activity log"><img data-l="pl" src="shots/diagnostics-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Diagnostyka: status watchera, konflikty profili, ostatnie operacje i log aktywności"></button></div>
+      <div class="reveal">
+        <p class="label">// <span data-l="en">DIAGNOSTICS</span><span data-l="pl">DIAGNOSTYKA</span></p>
+        <h3><span data-l="en">Nothing happens in secret</span><span data-l="pl">Nic nie dzieje się po cichu</span></h3>
+        <p><span data-l="en">See the watcher status, profile conflicts, every recent operation and the full activity log in one place.</span><span data-l="pl">Status watchera, konflikty profili, każda ostatnia operacja i pełny log aktywności w jednym miejscu.</span></p>
+        <ul class="ticks">
+          <li><span data-l="en">Honest results: fully applied, partial, failed or skipped</span><span data-l="pl">Uczciwe wyniki: zastosowano w pełni, częściowo, błąd lub pominięto</span></li>
+          <li><span data-l="en">Export a diagnostics ZIP with the log when reporting a bug</span><span data-l="pl">Eksport ZIP diagnostyki z logiem przy zgłaszaniu błędu</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="tour-row">
+      <div class="tour-shot reveal"><button type="button" class="frame" aria-label="Enlarge screenshot" data-al-en="Enlarge screenshot" data-al-pl="Powiększ zrzut ekranu"><img data-l="en" src="shots/settings-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Settings: language, tray behaviour, startup, updates and app data"><img data-l="pl" src="shots/settings-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Ustawienia: język, zasobnik, uruchamianie, aktualizacje i dane aplikacji"></button></div>
+      <div class="reveal">
+        <p class="label">// <span data-l="en">SETTINGS</span><span data-l="pl">USTAWIENIA</span></p>
+        <h3><span data-l="en">Starts with Windows, quietly</span><span data-l="pl">Startuje z Windows, po cichu</span></h3>
+        <p><span data-l="en">Start with Windows, minimized to the tray, optionally elevated so profiles also reach admin-level processes.</span><span data-l="pl">Uruchamianie z Windows, zminimalizowane do zasobnika, opcjonalnie z uprawnieniami administratora, aby profile działały też na procesach podniesionych.</span></p>
+        <ul class="ticks">
+          <li><span data-l="en">English and Polish, switchable in the app</span><span data-l="pl">Polski i angielski, przełączane w aplikacji</span></li>
+          <li><span data-l="en">Repair button if autostart was disabled in Task Manager</span><span data-l="pl">Przycisk Napraw, gdy autostart wyłączono w Menedżerze zadań</span></li>
+          <li><span data-l="en">Your data lives in %APPDATA%, never next to the EXE</span><span data-l="pl">Dane są w %APPDATA%, nigdy obok pliku EXE</span></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="cmp-h">
+  <p class="label reveal">03 · AFFINITY VS CPU SETS</p>
+  <h2 id="cmp-h" class="h-sm reveal"><span data-l="en">Two modes,<br><em>not synonyms.</em></span><span data-l="pl">Dwa tryby,<br><em>nie synonimy.</em></span></h2>
+  <div class="cmp">
+    <div class="glass glow reveal"><h3>Affinity</h3><dl>
+      <div><dt><span data-l="en">How</span><span data-l="pl">Jak</span></dt><dd><span data-l="en">A hard binding: the process may run only on the selected logical processors.</span><span data-l="pl">Twarde przypięcie: proces może działać tylko na wybranych procesorach logicznych.</span></dd></div>
+      <div><dt><span data-l="en">Good for</span><span data-l="pl">Do czego</span></dt><dd><span data-l="en">Strict isolation and repeatable pinning tests.</span><span data-l="pl">Ścisła izolacja i powtarzalne testy przypięcia.</span></dd></div>
+      <div><dt><span data-l="en">Watch out</span><span data-l="pl">Uwaga</span></dt><dd><span data-l="en">Pinning too narrowly can lower throughput.</span><span data-l="pl">Zbyt wąskie przypięcie może obniżyć wydajność.</span></dd></div>
+    </dl></div>
+    <div class="glass glow reveal"><h3>CPU Sets</h3><dl>
+      <div><dt><span data-l="en">How</span><span data-l="pl">Jak</span></dt><dd><span data-l="en">A scheduling preference: Windows prefers the selected processors but may schedule elsewhere under load.</span><span data-l="pl">Preferencja planisty: Windows woli wybrane procesory, ale pod obciążeniem może użyć innych.</span></dd></div>
+      <div><dt><span data-l="en">Good for</span><span data-l="pl">Do czego</span></dt><dd><span data-l="en">Everyday steering on hybrid CPUs, friendlier to the Windows scheduler.</span><span data-l="pl">Codzienne kierowanie na procesorach hybrydowych, przyjaźniejsze dla planisty Windows.</span></dd></div>
+      <div><dt><span data-l="en">Watch out</span><span data-l="pl">Uwaga</span></dt><dd><span data-l="en">A weaker guarantee by design.</span><span data-l="pl">Z założenia słabsza gwarancja.</span></dd></div>
+    </dl></div>
+  </div>
+  <p class="cmp-note reveal"><span data-l="en">A restricted affinity mask also limits what CPU Sets can do for that process. Since 2.1, applying CPU Sets widens a stale hard affinity instead of silently fighting it.</span><span data-l="pl">Zawężona maska affinity ogranicza też działanie CPU Sets dla tego procesu. Od wersji 2.1 zastosowanie CPU Sets poszerza starą twardą affinity zamiast po cichu z nią walczyć.</span></p>
+</section>
+
 <section class="section" aria-labelledby="honest-h">
-  <p class="label reveal">02 · <span data-l="en">GOOD TO KNOW</span><span data-l="pl">WARTO WIEDZIEĆ</span></p>
-  <h2 id="honest-h" class="reveal"><span data-l="en">Honest<br><em>details.</em></span><span data-l="pl">Uczciwie,<br><em>bez ściemy.</em></span></h2>
-  <ul class="feats notes"><li class="glass glow feat reveal"><h3><span data-l="en">Honest limits</span><span data-l="pl">Uczciwe ograniczenia</span></h3><p><span data-l="en">The UI covers processor group 0 (the first 64 logical processors). Some changes to elevated or protected processes need administrator rights; otherwise Windows refuses and PCO reports it.</span><span data-l="pl">Interfejs obejmuje grupę procesorów 0 (pierwsze 64 procesory logiczne). Zmiany procesów podniesionych lub chronionych mogą wymagać administratora; inaczej Windows odmawia, a PCO to zgłasza.</span></p></li><li class="glass glow feat reveal"><h3><span data-l="en">No promises on speed</span><span data-l="pl">Bez obietnic wydajności</span></h3><p><span data-l="en">Gains depend on the workload and are never promised. Incorrect settings can reduce stability.</span><span data-l="pl">Zyski zależą od obciążenia i nie są obiecywane. Nieprawidłowe ustawienia mogą pogorszyć stabilność.</span></p></li><li class="glass glow feat reveal"><h3><span data-l="en">Non-invasive</span><span data-l="pl">Nieinwazyjnie</span></h3><p><span data-l="en">No driver, service or kernel component, no memory reading and no DLL injection. Compatibility with anti-cheat isn't guaranteed; use with online games at your own risk.</span><span data-l="pl">Bez sterownika, usługi ani komponentu jądra, bez czytania pamięci i wstrzykiwania DLL. Zgodność z anti-cheatem nie jest gwarantowana; używasz z grami online na własne ryzyko.</span></p></li><li class="glass glow feat reveal"><h3><span data-l="en">A hobby project</span><span data-l="pl">Projekt hobbystyczny</span></h3><p><span data-l="en">Made by one person for fun, MIT licensed, provided as is. Related to FrameHub, but a separate, focused tool.</span><span data-l="pl">Tworzony przez jedną osobę dla przyjemności, licencja MIT, bez gwarancji. Spokrewniony z FrameHub, ale osobne, wyspecjalizowane narzędzie.</span></p></li></ul>
+  <p class="label reveal">04 · <span data-l="en">GOOD TO KNOW</span><span data-l="pl">WARTO WIEDZIEĆ</span></p>
+  <h2 id="honest-h" class="h-sm reveal"><span data-l="en">Honest<br><em>details.</em></span><span data-l="pl">Uczciwie,<br><em>bez ściemy.</em></span></h2>
+  <ul class="feats notes"><li class="glass glow feat reveal"><h3><span data-l="en">Identity-safe changes</span><span data-l="pl">Zmiany z weryfikacją tożsamości</span></h3><p><span data-l="en">Before every write PCO re-checks PID, start time, name and path. Recycled PIDs are refused, never guessed.</span><span data-l="pl">Przed każdym zapisem PCO sprawdza PID, czas startu, nazwę i ścieżkę. Powtórnie użyte PID-y są odrzucane, nigdy zgadywane.</span></p></li><li class="glass glow feat reveal"><h3><span data-l="en">Non-invasive</span><span data-l="pl">Nieinwazyjnie</span></h3><p><span data-l="en">No driver, service or kernel component, no memory reading and no DLL injection. Compatibility with anti-cheat isn't guaranteed; use with online games at your own risk.</span><span data-l="pl">Bez sterownika, usługi ani komponentu jądra, bez czytania pamięci i wstrzykiwania DLL. Zgodność z anty-cheatem nie jest gwarantowana; z grami online używasz na własne ryzyko.</span></p></li><li class="glass glow feat reveal"><h3><span data-l="en">No promises on speed</span><span data-l="pl">Bez obietnic wydajności</span></h3><p><span data-l="en">Gains depend on the workload and are never promised. Incorrect settings can reduce stability.</span><span data-l="pl">Zyski zależą od obciążenia i nie są obiecywane. Nieprawidłowe ustawienia mogą pogorszyć stabilność.</span></p></li><li class="glass glow feat reveal"><h3><span data-l="en">Honest limits</span><span data-l="pl">Uczciwe ograniczenia</span></h3><p><span data-l="en">The UI covers processor group 0 (the first 64 logical processors). Changes to elevated or protected processes may need administrator rights; otherwise Windows refuses and PCO reports it.</span><span data-l="pl">Interfejs obejmuje grupę procesorów 0 (pierwsze 64 procesory logiczne). Zmiany procesów podniesionych lub chronionych mogą wymagać administratora; inaczej Windows odmawia, a PCO to zgłasza.</span></p></li></ul>
 </section>
+
 <section class="section" aria-labelledby="inst-h">
-  <p class="label reveal">03 · <span data-l="en">INSTALL &amp; SOURCE</span><span data-l="pl">INSTALACJA I KOD</span></p>
-  <h2 id="inst-h" class="reveal"><span data-l="en">Get<br><em>started.</em></span><span data-l="pl">Jak<br><em>zacząć.</em></span></h2>
-  <ol class="steps instsel"><li class="reveal"><b>01</b><span><span data-l="en">Download <b>ProcessCoreOptimizer_Setup_2.0.0.exe</b> from GitHub Releases and compare its SHA-256 with the one in the release notes.</span><span data-l="pl">Pobierz <b>ProcessCoreOptimizer_Setup_2.0.0.exe</b> ze stron wydań na GitHubie i porównaj jego SHA-256 z podanym w notatkach wydania.</span></span></li><li class="reveal"><b>02</b><span><span data-l="en">The installer is not code-signed yet, so Windows SmartScreen may ask for confirmation on first run. That is expected.</span><span data-l="pl">Instalator nie jest jeszcze podpisany certyfikatem, więc Windows SmartScreen może poprosić o potwierdzenie przy pierwszym uruchomieniu. To normalne.</span></span></li><li class="reveal"><b>03</b><span><span data-l="en">Needs Windows 10/11 x64 and the .NET 10 Desktop Runtime. Upgrading from 1.3.0 requires uninstalling it first (your profiles are kept in %APPDATA%\ProcessCoreOptimizer).</span><span data-l="pl">Wymaga Windows 10/11 x64 i .NET 10 Desktop Runtime. Aktualizacja z wersji 1.3.0 wymaga najpierw odinstalowania jej (profile zostają w %APPDATA%\ProcessCoreOptimizer).</span></span></li></ol>
-  <p class="buttons reveal"><a class="btn" href="https://github.com/9Erza/ProcessCoreOptimizer/releases/tag/v2.0.0" rel="noopener"><span data-l="en">Releases on GitHub</span><span data-l="pl">Wydania na GitHubie</span></a><a class="btn ghost-link" href="https://github.com/9Erza/ProcessCoreOptimizer" rel="noopener"><span data-l="en">Source code & docs</span><span data-l="pl">Kod i dokumentacja</span></a><a class="btn ghost-link" href="https://github.com/9Erza/ProcessCoreOptimizer/issues" rel="noopener"><span data-l="en">Report an issue</span><span data-l="pl">Zgłoś problem</span></a></p>
+  <p class="label reveal">05 · <span data-l="en">INSTALL &amp; SOURCE</span><span data-l="pl">INSTALACJA I KOD</span></p>
+  <h2 id="inst-h" class="h-sm reveal"><span data-l="en">Get<br><em>started.</em></span><span data-l="pl">Jak<br><em>zacząć.</em></span></h2>
+  <ol class="steps instsel"><li class="reveal"><b>01</b><span><span data-l="en">Download <b>ProcessCoreOptimizer_Setup_2.1.0.exe</b> from GitHub Releases. Optionally compare its SHA-256:</span><span data-l="pl">Pobierz <b>ProcessCoreOptimizer_Setup_2.1.0.exe</b> z wydań na GitHubie. Opcjonalnie porównaj jego SHA-256:</span><code class="sha">B225097BA544FF5E33F108AAE91D30F5D0B8147365D638F29F2FEBC4247C89B7</code></span></li><li class="reveal"><b>02</b><span><span data-l="en">Run it on Windows 10/11 x64. Nothing else to install: the .NET runtime is built in. The installer isn't code-signed yet, so SmartScreen may ask for confirmation on first run.</span><span data-l="pl">Uruchom na Windows 10/11 x64. Nic więcej nie trzeba instalować: środowisko .NET jest wbudowane. Instalator nie jest jeszcze podpisany, więc SmartScreen może poprosić o potwierdzenie przy pierwszym uruchomieniu.</span></span></li><li class="reveal"><b>03</b><span><span data-l="en">Upgrading from 2.0.0? Just run the installer: it updates in place and keeps your profiles in %APPDATA%\ProcessCoreOptimizer. From 1.3.0, uninstall the old version first.</span><span data-l="pl">Masz 2.0.0? Po prostu uruchom instalator: zaktualizuje aplikację w miejscu i zachowa profile w %APPDATA%\ProcessCoreOptimizer. Z wersji 1.3.0 najpierw odinstaluj starą wersję.</span></span></li></ol>
+  <p class="buttons reveal"><a class="btn" href="https://github.com/9Erza/ProcessCoreOptimizer/releases/tag/v2.1.0" rel="noopener"><span data-l="en">Release notes 2.1.0</span><span data-l="pl">Informacje o wydaniu 2.1.0</span></a><a class="btn ghost-link" href="https://github.com/9Erza/ProcessCoreOptimizer" rel="noopener"><span data-l="en">Source code &amp; docs</span><span data-l="pl">Kod i dokumentacja</span></a><a class="btn ghost-link" href="https://github.com/9Erza/ProcessCoreOptimizer/issues" rel="noopener"><span data-l="en">Report an issue</span><span data-l="pl">Zgłoś problem</span></a></p>
 </section>
+
 <section class="section contact" aria-labelledby="sup-h">
-  <p class="label reveal">04 · <span data-l="en">SUPPORT</span><span data-l="pl">WSPARCIE</span></p>
-  <h2 id="sup-h" class="reveal"><span data-l="en">Like it?<br><em>Buy me a coffee.</em></span><span data-l="pl">Podoba się?<br><em>Postaw mi kawę.</em></span></h2>
-  <p class="lead reveal"><span data-l="en">Process Core Optimizer is free and I don't earn anything from it. If it's useful to you, you can support it with a coffee. Entirely voluntary, nothing is locked behind it. A GitHub star helps too.</span><span data-l="pl">Process Core Optimizer jest darmowy i nic na nim nie zarabiam. Jeśli Ci się przydaje, możesz wesprzeć go kawą. Całkowicie dobrowolnie, nic nie jest za to odblokowywane. Gwiazdka na GitHubie też pomaga.</span></p>
-  <p class="buttons reveal"><a class="btn" href="https://buymeacoffee.com/9erza" rel="noopener">☕ Buy Me a Coffee</a><a class="btn ghost-link" href="../framehub/">FrameHub <span aria-hidden="true">→</span></a></p>
+  <p class="label reveal">06 · <span data-l="en">SUPPORT</span><span data-l="pl">WSPARCIE</span></p>
+  <h2 id="sup-h" class="h-sm reveal"><span data-l="en">Like it?<br><em>Buy me a coffee.</em></span><span data-l="pl">Podoba się?<br><em>Postaw mi kawę.</em></span></h2>
+  <p class="lead reveal"><span data-l="en">Process Core Optimizer is a hobby project made by one person, free and MIT licensed. If it's useful to you, a coffee or a GitHub star helps. Entirely voluntary, nothing is locked behind it.</span><span data-l="pl">Process Core Optimizer to hobbystyczny projekt jednej osoby, darmowy, na licencji MIT. Jeśli Ci się przydaje, kawa albo gwiazdka na GitHubie pomaga. Całkowicie dobrowolnie, nic nie jest za to odblokowywane.</span></p>
+  <p class="buttons reveal"><a class="btn" href="https://buymeacoffee.com/9erza" rel="noopener">☕ Buy Me a Coffee</a><a class="btn ghost-link" href="../framehub/"><span data-l="en">See also: FrameHub</span><span data-l="pl">Zobacz też: FrameHub</span> <span aria-hidden="true">→</span></a></p>
 </section>
 
 </main>
-<footer class="foot"><p class="brand-s">ERZA STUDIO</p><nav aria-label="Footer" data-al-en="Footer" data-al-pl="Stopka"><a href="../">Studio</a><a href="../sortpuzzle/">Sort Puzzle</a><a href="../framehub/">FrameHub</a><a href="../pco/">PCO</a><a href="../sortpuzzle/privacy/"><span data-l="en">Privacy policy</span><span data-l="pl">Polityka prywatności</span></a><a href="mailto:contact@erza.studio">contact@erza.studio</a></nav><p class="muted">© Erza Studio</p></footer>
+<footer class="foot"><p class="brand-s">ERZA STUDIO</p><nav aria-label="Footer" data-al-en="Footer" data-al-pl="Stopka"><a href="../">Studio</a><a href="../sortpuzzle/">Sort Puzzle</a><a href="../framehub/">FrameHub</a><a href="../pco/" aria-current="page">PCO</a><a href="../sortpuzzle/privacy/"><span data-l="en">Privacy policy</span><span data-l="pl">Polityka prywatności</span></a><a href="mailto:contact@erza.studio">contact@erza.studio</a></nav><p class="muted">© Erza Studio</p></footer>
 <script src="../studio.js" defer></script>
 </body>
 </html>
