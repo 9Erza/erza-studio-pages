@@ -452,8 +452,12 @@ section[id]{scroll-margin-top:5.5rem}
   .carousel-controls{order:1;margin:0 0 .9rem}
 }
 .work .carousel{margin-top:1.6rem}
-.status-more{margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--line)}
-.status-more .label{margin:0 0 .35rem;font-size:.65rem;color:var(--muted)}
-.status-more p:last-child{margin:0;font:500 .78rem/1.5 var(--mono);color:var(--muted);letter-spacing:.02em}
-.status-more a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(255,244,228,.14);padding-bottom:1px}
-.status-more a:hover{color:var(--accent);border-color:var(--accent)}
+.status-more{margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--line)}
+.status-more .label{margin:0 0 .6rem;font-size:.68rem;color:var(--muted);letter-spacing:.12em}
+.status-more .plist{gap:.5rem}
+.status-more .plist li{column-gap:.55rem;align-items:start}
+.status-more .plist .pd{width:.4rem;height:.4rem;margin-top:.4rem;border-color:rgba(255,244,228,.22)}
+.status-more .plist b{font-size:.82rem;font-weight:400;color:var(--muted)}
+.status-more .plist em{font-size:.7rem;color:rgba(193,183,168,.72);margin-top:.1rem}
+.status-more a{text-decoration:none}
+.status-more a:hover b{color:var(--accent)}
