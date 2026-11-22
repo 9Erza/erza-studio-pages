@@ -452,3 +452,8 @@ section[id]{scroll-margin-top:5.5rem}
   .carousel-controls{order:1;margin:0 0 .9rem}
 }
 .work .carousel{margin-top:1.6rem}
+.status-more{margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--line)}
+.status-more .label{margin:0 0 .35rem;font-size:.65rem;color:var(--muted)}
+.status-more p:last-child{margin:0;font:500 .78rem/1.5 var(--mono);color:var(--muted);letter-spacing:.02em}
+.status-more a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(255,244,228,.14);padding-bottom:1px}
+.status-more a:hover{color:var(--accent);border-color:var(--accent)}
