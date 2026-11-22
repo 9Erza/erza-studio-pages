@@ -281,3 +281,83 @@ html:not(.js) .prose-page .policy-language[data-l=pl]{display:block}
 .side-card span:not(.label){color:var(--muted)}
 .side-card em{font-style:normal;color:var(--accent);font:500 .8rem var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-top:.3rem}
 @media (min-width:760px){.side-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ===== v2: shared navigation, app pages (feature tour, lightbox, compare), 404 ===== */
+.top nav a[aria-current=page]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+.sub .top nav{gap:1.2rem}
+.foot nav a[aria-current=page]{color:var(--ink)}
+
+/* framed app screenshot (desktop window) */
+.frame{position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0b0f17;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.9),0 0 60px -18px var(--accent-glow);cursor:zoom-in;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.frame img{width:100%;height:auto}
+.frame:hover{transform:translateY(-3px);border-color:rgba(31,181,196,.45)}
+.frame::after{content:"⤢";position:absolute;right:.7rem;bottom:.7rem;width:2rem;height:2rem;display:grid;place-items:center;border-radius:50%;
+  background:rgba(6,7,11,.72);border:1px solid var(--line);color:var(--ink);font-size:.95rem;opacity:0;transition:opacity .25s}
+.frame:hover::after,.frame:focus-visible::after{opacity:1}
+.app-hero .frame{transform:perspective(1600px) rotateY(-4deg) rotateX(1deg)}
+.app-hero .frame:hover{transform:perspective(1600px) rotateY(-1deg) translateY(-3px)}
+@media (max-width:859px){.app-hero .frame,.app-hero .frame:hover{transform:none}}
+
+/* "what's new" strip */
+.news{display:grid;grid-template-columns:minmax(0,1fr);gap:.8rem;margin:1.5rem 0 0}
+.news li{list-style:none;padding:1rem 1.1rem;border:1px solid var(--line);border-radius:16px;background:rgba(13,17,26,.5)}
+.news b{display:block;font-weight:500;margin-bottom:.25rem}
+.news span{color:var(--muted);font-size:.95rem}
+.news{padding:0}
+@media (min-width:700px){.news{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1080px){.news{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* feature tour: alternating screenshot + copy */
+.tour{display:grid;gap:clamp(3rem,8vw,6rem);margin-top:1rem}
+.tour-row{display:grid;grid-template-columns:minmax(0,1fr);gap:1.6rem;align-items:center}
+.tour-row h3{font-size:clamp(1.4rem,3.4vw,2rem);letter-spacing:.05em}
+.tour-row p{color:var(--muted);margin:0 0 1rem;max-width:34rem}
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:.55rem;max-width:34rem}
+.ticks li{position:relative;padding-left:1.6rem}
+.ticks li::before{content:"";position:absolute;left:.15rem;top:.55em;width:.55rem;height:.55rem;border-radius:2px;background:var(--accent);box-shadow:0 0 10px var(--accent-glow);transform:rotate(45deg)}
+.tour-row .label{margin-bottom:.7rem}
+@media (min-width:860px){
+  .tour-row{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:3.5rem}
+  .tour-row:nth-child(even) .tour-shot{order:2}
+}
+
+/* Affinity vs CPU Sets */
+.cmp{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+.cmp .glass{padding:1.4rem 1.5rem}
+.cmp h3{font-size:1.5rem;letter-spacing:.06em}
+.cmp dl{margin:0;display:grid;gap:.7rem}
+.cmp dt{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.cmp dd{margin:.1rem 0 0;color:var(--muted)}
+.cmp-note{max-width:46rem;margin:1.2rem 0 0;color:var(--muted);font-size:.95rem;border-left:2px solid var(--accent);padding-left:1rem}
+@media (min-width:760px){.cmp{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* checksum */
+.sha{display:block;margin-top:.4rem;font:500 .74rem/1.5 var(--mono);color:var(--muted);overflow-wrap:anywhere;letter-spacing:.02em}
+
+/* lightbox */
+.lb{border:0;padding:0;background:transparent;max-width:min(96vw,1600px);max-height:94vh;width:auto;overflow:visible}
+.lb::backdrop{background:rgba(3,4,8,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.lb img{max-width:min(96vw,1600px);max-height:86vh;width:auto;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 30px 90px -20px #000}
+.lb p{margin:.7rem 0 0;text-align:center;color:var(--muted);font:500 .8rem var(--mono);letter-spacing:.04em}
+.lb button{position:absolute;top:-.9rem;right:-.9rem;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:1.1rem;cursor:pointer}
+.lb button:hover{border-color:var(--accent)}
+
+/* studio page: tool cards with a screenshot */
+.side-card .thumb{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin:-.2rem -.2rem .6rem;aspect-ratio:16/9;background:#0b0f17}
+.side-card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .6s}
+.side-card:hover .thumb img{transform:scale(1.03)}
+
+/* 404 */
+.nf{min-height:70vh;display:grid;align-content:center;max-width:46rem;margin:0 auto;padding:6rem var(--gut) 3rem}
+.nf h1{font-size:clamp(4rem,20vw,9rem);color:var(--accent);margin-bottom:.5rem}
+.wshot .frame{border-radius:12px}
+.wshot .frame img{border:0;border-radius:0;box-shadow:none}
+/* v2 tweaks */
+.lb{max-width:min(96vw,1280px)}
+.lb img{max-width:min(96vw,1280px)}
+@media (min-width:860px){
+  .tour-row:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+  .app-hero{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:2.5rem}
+  .app-hero .gp-card{padding:clamp(1.4rem,2.6vw,2.4rem)}
+}
