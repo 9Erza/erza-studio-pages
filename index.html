@@ -5,8 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#06070b">
-<title data-pl="Erza Studio · Małe, spokojne gry i aplikacje mobilne">Erza Studio · Small, calm mobile games and apps</title>
-<meta name="description" content="Erza Studio makes small, calm mobile games and apps. First up: Sort Puzzle, a relaxing color-sorting puzzle that works offline and needs no account.">
+<title data-pl="Erza Studio · Spokojne gry i aplikacje mobilne">Erza Studio · Calm games and apps for phones</title>
+<meta name="description" data-en="Erza Studio makes calm mobile games and apps: Sippo, a water habit that grows a living aquarium, and Sort Puzzle, a relaxing color puzzle. Plus free, open-source Windows tools." data-pl="Erza Studio tworzy spokojne gry i aplikacje mobilne: Sippo, nawyk picia wody, który rozrasta żywe akwarium, i Sort Puzzle, relaksującą łamigłówkę z kolorami. Do tego darmowe narzędzia open source na Windows." content="Erza Studio makes calm mobile games and apps: Sippo, a water habit that grows a living aquarium, and Sort Puzzle, a relaxing color puzzle. Plus free, open-source Windows tools.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://erza.studio/">
+<meta property="og:site_name" content="Erza Studio">
+<meta property="og:title" data-en="Erza Studio · Calm games and apps for phones" data-pl="Erza Studio · Spokojne gry i aplikacje mobilne" content="Erza Studio · Calm games and apps for phones">
+<meta property="og:description" data-en="Sippo, a water habit that grows a living aquarium. Sort Puzzle, a calm color puzzle. Free open-source tools for Windows." data-pl="Sippo, nawyk picia wody, który rozrasta żywe akwarium. Sort Puzzle, spokojna łamigłówka z kolorami. Darmowe narzędzia open source na Windows." content="Sippo, a water habit that grows a living aquarium. Sort Puzzle, a calm color puzzle. Free open-source tools for Windows.">
+<meta property="og:image" content="https://erza.studio/sippo/shots/aquarium-en.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://erza.studio/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="studio.css">
 <script>document.documentElement.classList.add("js")</script>
@@ -17,10 +25,10 @@
 <header class="top">
   <a class="brand" href="#top" aria-label="Erza Studio"><span class="dot" aria-hidden="true"></span>ERZA STUDIO</a>
   <nav aria-label="Main" data-al-en="Main" data-al-pl="Główna">
-    <a href="#how"><b>01</b><span> · <span data-l="en">How it works</span><span data-l="pl">Jak to działa</span></span></a>
-    <a href="#games"><b>02</b><span> · <span data-l="en">Games</span><span data-l="pl">Gry</span></span></a>
-    <a href="#opensource"><b>03</b><span> · <span data-l="en">Tools</span><span data-l="pl">Narzędzia</span></span></a>
-    <a href="#contact"><b>04</b><span> · <span data-l="en">Contact</span><span data-l="pl">Kontakt</span></span></a>
+    <a href="#work" aria-label="Work" data-al-en="Work" data-al-pl="Projekty"><b>01</b><span> · <span data-l="en">Work</span><span data-l="pl">Projekty</span></span></a>
+    <a href="#opensource" aria-label="Open source" data-al-en="Open source" data-al-pl="Open source"><b>02</b><span> · <span data-l="en">Open source</span><span data-l="pl">Open source</span></span></a>
+    <a href="#approach" aria-label="Approach" data-al-en="Approach" data-al-pl="Podejście"><b>03</b><span> · <span data-l="en">Approach</span><span data-l="pl">Podejście</span></span></a>
+    <a href="#contact" aria-label="Contact" data-al-en="Contact" data-al-pl="Kontakt"><b>04</b><span> · <span data-l="en">Contact</span><span data-l="pl">Kontakt</span></span></a>
   </nav>
   <div class="lang" role="group" aria-label="Language" data-al-en="Language" data-al-pl="Język">
     <button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="pl" aria-pressed="false">PL</button>
@@ -34,65 +42,70 @@
   <div class="hero-in">
     <div class="glass glow hero-card reveal">
       <p class="label">// ERZA STUDIO</p>
-      <h1><span data-l="en">Small, calm<br><em>mobile games and apps.</em></span><span data-l="pl">Małe, spokojne<br><em>gry i aplikacje mobilne.</em></span></h1>
-      <p class="lead"><span data-l="en">Cozy puzzles you can pick up for a minute and put down again. No accounts, no pressure.</span><span data-l="pl">Przytulne łamigłówki na minutę i na dłużej. Bez konta, bez presji.</span></p>
-      <p><a class="btn" href="#games"><span data-l="en">Meet our first game</span><span data-l="pl">Poznaj naszą pierwszą grę</span> <span aria-hidden="true">→</span></a></p>
+      <h1><span data-l="en">Small, calm<br><em>games and apps.</em></span><span data-l="pl">Małe, spokojne<br><em>gry i aplikacje.</em></span></h1>
+      <p class="lead"><span data-l="en">Mobile games with heart, a gentler water habit, and a few free tools for Windows. One person, no accounts, no noise.</span><span data-l="pl">Gry mobilne z sercem, spokojniejszy nawyk picia wody i kilka darmowych narzędzi na Windows. Jedna osoba, bez kont i bez hałasu.</span></p>
+      <div class="hero-actions">
+        <a class="btn" href="#work"><span data-l="en">See our work</span><span data-l="pl">Zobacz projekty</span> <span aria-hidden="true">→</span></a>
+        <a class="btn ghost-link" href="sippo/"><span data-l="en">Meet Sippo</span><span data-l="pl">Poznaj Sippo</span></a>
+      </div>
     </div>
     <aside class="glass glow status reveal" aria-label="Status">
-      <p class="label">// STATUS</p>
-      <p class="st"><span class="pulse" aria-hidden="true"></span>Sort Puzzle</p>
-      <p class="muted"><span data-l="en">Android · in testing</span><span data-l="pl">Android · w testach</span></p>
+      <p class="label">// <span data-l="en">NOW</span><span data-l="pl">TERAZ</span></p>
+      <ul class="plist">
+        <li><span class="pd" aria-hidden="true"></span><b><a href="sippo/">Sippo</a></b><em><span data-l="en">Water habit · in development</span><span data-l="pl">Nawyk picia wody · w budowie</span></em></li>
+        <li><span class="pd soon" aria-hidden="true"></span><b><a href="sortpuzzle/">Sort Puzzle</a></b><em><span data-l="en">Color puzzle · Android in testing</span><span data-l="pl">Łamigłówka z kolorami · Android w testach</span></em></li>
+      </ul>
     </aside>
   </div>
   <p class="scrollhint" aria-hidden="true"><span data-l="en">SCROLL</span><span data-l="pl">PRZEWIŃ</span> ↓</p>
 </section>
 
-<section class="story" id="how" aria-labelledby="how-h">
-  <div class="stage">
-    <div class="copy">
-      <p class="label">01 · <span data-l="en">HOW SORT PUZZLE WORKS</span><span data-l="pl">JAK DZIAŁA SORT PUZZLE</span></p>
-      <h2 id="how-h"><span data-l="en">Pour. Sort.<br><em>Repeat.</em></span><span data-l="pl">Przelewaj. Sortuj.<br><em>Powtarzaj.</em></span></h2>
-      <ol class="steps">
-        <li><b>01</b><span><span data-l="en">Pick a bottle and pour it onto a matching color.</span><span data-l="pl">Wybierz butelkę i przelej ją na pasujący kolor.</span></span></li>
-        <li><b>02</b><span><span data-l="en">Free up space, plan a few moves ahead. Undo is always free.</span><span data-l="pl">Zrób miejsce, zaplanuj kilka ruchów naprzód. Cofanie jest zawsze darmowe.</span></span></li>
-        <li><b>03</b><span><span data-l="en">Every color rests in its own bottle. Breathe out.</span><span data-l="pl">Każdy kolor ląduje w swojej butelce. Wydech.</span></span></li>
-      </ol>
-    </div>
-    <div class="bottles" aria-hidden="true">
-      <div class="bottle"><div class="neck"></div><div class="body"><i class="seg" style="--c:#E5484D;--i:0"></i><i class="seg" style="--c:#E5484D;--i:1"></i><i class="seg" style="--c:#E5484D;--i:2"></i><i class="seg" style="--c:#E5484D;--i:3"></i></div></div><div class="bottle"><div class="neck"></div><div class="body"><i class="seg" style="--c:#F7C948;--i:4"></i><i class="seg" style="--c:#F7C948;--i:5"></i><i class="seg" style="--c:#F7C948;--i:6"></i><i class="seg" style="--c:#F7C948;--i:7"></i></div></div><div class="bottle"><div class="neck"></div><div class="body"><i class="seg" style="--c:#1FB5C4;--i:8"></i><i class="seg" style="--c:#1FB5C4;--i:9"></i><i class="seg" style="--c:#1FB5C4;--i:10"></i><i class="seg" style="--c:#1FB5C4;--i:11"></i></div></div><div class="bottle"><div class="neck"></div><div class="body"><i class="seg" style="--c:#8E55D9;--i:12"></i><i class="seg" style="--c:#8E55D9;--i:13"></i><i class="seg" style="--c:#8E55D9;--i:14"></i><i class="seg" style="--c:#8E55D9;--i:15"></i></div></div><div class="bottle empty"><div class="neck"></div><div class="body"></div></div>
-    </div>
+<section class="section work" id="work" aria-labelledby="work-h">
+  <p class="label reveal">01 · <span data-l="en">GAMES &amp; APPS</span><span data-l="pl">GRY I APLIKACJE</span></p>
+  <h2 id="work-h" class="reveal"><span data-l="en">Made for<br><em>everyday calm.</em></span><span data-l="pl">Stworzone na<br><em>codzienny spokój.</em></span></h2>
+  <p class="lead reveal"><span data-l="en">Two mobile projects, both built around a simple daily moment. Short sessions, calm pacing and no pressure to come back.</span><span data-l="pl">Dwa projekty mobilne, oba zbudowane wokół prostej codziennej chwili. Krótkie sesje, spokojne tempo i bez presji, żeby wracać.</span></p>
+
+  <div class="work-grid">
+    <article class="glass glow product reveal">
+      <a class="product-visual" href="sippo/" tabindex="-1" aria-hidden="true">
+        <div class="fan">
+          <span class="phone"><img data-l="en" src="sippo/shots/collection-en.webp" width="1080" height="1920" loading="lazy" decoding="async" alt=""><img data-l="pl" src="sippo/shots/collection-pl.webp" width="1080" height="1920" loading="lazy" decoding="async" alt=""></span>
+          <span class="phone"><img data-l="en" src="sippo/shots/aquarium-en.webp" width="1080" height="1920" loading="lazy" decoding="async" alt=""><img data-l="pl" src="sippo/shots/aquarium-pl.webp" width="1080" height="1920" loading="lazy" decoding="async" alt=""></span>
+          <span class="phone"><img data-l="en" src="sippo/shots/history-en.webp" width="1080" height="1920" loading="lazy" decoding="async" alt=""><img data-l="pl" src="sippo/shots/history-pl.webp" width="1080" height="1920" loading="lazy" decoding="async" alt=""></span>
+        </div>
+      </a>
+      <div class="product-body">
+        <p class="label">// <span data-l="en">IN DEVELOPMENT · iOS &amp; ANDROID</span><span data-l="pl">W BUDOWIE · iOS I ANDROID</span></p>
+        <h3>Sippo</h3>
+        <p><span data-l="en">A water habit that grows a living aquarium. One glass at a time, Pip’s world fills up; gentle reminders keep the rhythm without guilt.</span><span data-l="pl">Nawyk picia wody, który rozrasta żywe akwarium. Szklanka po szklance świat Pipa wypełnia się wodą, a spokojne przypomnienia pilnują rytmu bez wyrzutów.</span></p>
+        <ul class="chips" aria-label="Tags" data-al-en="Tags" data-al-pl="Tagi"><li><span data-l="en">water habit</span><span data-l="pl">nawyk picia</span></li><li><span data-l="en">aquarium</span><span data-l="pl">akwarium</span></li><li>offline</li><li><span data-l="en">no account</span><span data-l="pl">bez konta</span></li></ul>
+        <p class="product-links"><a class="btn" href="sippo/"><span data-l="en">About Sippo</span><span data-l="pl">O Sippo</span> <span aria-hidden="true">→</span></a></p>
+      </div>
+    </article>
+
+    <article class="glass glow product reveal">
+      <a class="product-visual" href="sortpuzzle/" tabindex="-1" aria-hidden="true">
+        <div class="fan">
+          <span class="phone"><img data-l="en" src="sortpuzzle/shots/menu-en.webp" width="450" height="800" loading="lazy" decoding="async" alt=""><img data-l="pl" src="sortpuzzle/shots/menu-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt=""></span>
+          <span class="phone"><img data-l="en" src="sortpuzzle/shots/play-en.webp" width="450" height="800" loading="lazy" decoding="async" alt=""><img data-l="pl" src="sortpuzzle/shots/play-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt=""></span>
+          <span class="phone"><img data-l="en" src="sortpuzzle/shots/boss-en.webp" width="450" height="800" loading="lazy" decoding="async" alt=""><img data-l="pl" src="sortpuzzle/shots/boss-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt=""></span>
+        </div>
+      </a>
+      <div class="product-body">
+        <p class="label">// <span data-l="en">ANDROID IN TESTING</span><span data-l="pl">ANDROID W TESTACH</span></p>
+        <h3>Sort Puzzle</h3>
+        <p><span data-l="en">A relaxing color-sorting puzzle: pour colors between bottles until every color has its own. Worlds, boss levels, a daily level and hand-made challenges.</span><span data-l="pl">Relaksująca łamigłówka: przelewaj kolory między butelkami, aż każdy ma swoją. Światy, poziomy-bossy, poziom dnia i ręcznie ułożone wyzwania.</span></p>
+        <ul class="chips" aria-label="Tags" data-al-en="Tags" data-al-pl="Tagi"><li><span data-l="en">relax</span><span data-l="pl">relaks</span></li><li>offline</li><li><span data-l="en">no account</span><span data-l="pl">bez konta</span></li></ul>
+        <p class="product-links"><a class="btn" href="sortpuzzle/"><span data-l="en">About Sort Puzzle</span><span data-l="pl">O grze Sort Puzzle</span> <span aria-hidden="true">→</span></a></p>
+      </div>
+    </article>
   </div>
 </section>
 
-<section class="section games" id="games" aria-labelledby="games-h">
-  <p class="label reveal">02 · <span data-l="en">GAMES</span><span data-l="pl">GRY</span></p>
-  <h2 id="games-h" class="reveal"><span data-l="en">Our first<br><em>game.</em></span><span data-l="pl">Nasza pierwsza<br><em>gra.</em></span></h2>
-  <article class="glass glow game reveal">
-    <div class="shots">
-      <div class="shot"><img data-l="en" src="sortpuzzle/shots/menu-en.webp" width="450" height="800" loading="lazy" decoding="async" alt="Sort Puzzle main menu"><img data-l="pl" src="sortpuzzle/shots/menu-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt="Menu główne Sort Puzzle"></div><div class="shot"><img data-l="en" src="sortpuzzle/shots/play-en.webp" width="450" height="800" loading="lazy" decoding="async" alt="Sort Puzzle gameplay"><img data-l="pl" src="sortpuzzle/shots/play-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt="Rozgrywka w Sort Puzzle"></div><div class="shot"><img data-l="en" src="sortpuzzle/shots/boss-en.webp" width="450" height="800" loading="lazy" decoding="async" alt="Sort Puzzle boss level with hidden colors"><img data-l="pl" src="sortpuzzle/shots/boss-pl.webp" width="450" height="800" loading="lazy" decoding="async" alt="Poziom-boss z ukrytymi kolorami w Sort Puzzle"></div>
-    </div>
-    <div class="info">
-      <p class="label">// STATUS · <span data-l="en">ANDROID IN TESTING</span><span data-l="pl">ANDROID W TESTACH</span></p>
-      <h3>SORT PUZZLE</h3>
-      <p class="lead"><span data-l="en">A relaxing color-sorting puzzle: pour colors between bottles until every color has its own. Worlds, boss levels, a daily level and hand-made challenges.</span><span data-l="pl">Relaksująca łamigłówka: przelewaj kolory między butelkami, aż każdy ma swoją. Światy, poziomy-bossy, poziom dnia i ręcznie ułożone wyzwania.</span></p>
-      <ul class="tags" aria-label="Tags">
-        <li><span data-l="en">relax</span><span data-l="pl">relaks</span></li><li>offline</li><li><span data-l="en">no account</span><span data-l="pl">bez konta</span></li>
-      </ul>
-      <dl class="facts">
-        <div><dt>300+</dt><dd><span data-l="en">levels</span><span data-l="pl">poziomów</span></dd></div>
-        <div><dt>offline</dt><dd><span data-l="en">play anywhere</span><span data-l="pl">graj gdziekolwiek</span></dd></div>
-        <div><dt>0</dt><dd><span data-l="en">accounts needed</span><span data-l="pl">kont do założenia</span></dd></div>
-        <div><dt>EN · PL</dt><dd><span data-l="en">two languages</span><span data-l="pl">dwa języki</span></dd></div>
-      </dl>
-      <p><a class="btn" href="sortpuzzle/"><span data-l="en">About Sort Puzzle</span><span data-l="pl">O grze Sort Puzzle</span> <span aria-hidden="true">→</span></a></p>
-    </div>
-  </article>
-</section>
-
 <section class="section side" id="opensource" aria-labelledby="oss-h">
-  <p class="label reveal">03 · <span data-l="en">FREE TOOLS</span><span data-l="pl">DARMOWE NARZĘDZIA</span></p>
-  <h2 id="oss-h" class="h-sm reveal"><span data-l="en">Also, some<br><em>free tools.</em></span><span data-l="pl">Przy okazji,<br><em>darmowe narzędzia.</em></span></h2>
-  <p class="lead reveal"><span data-l="en">Open-source Windows hobby projects (MIT). I build them for fun and don't make money from them.</span><span data-l="pl">Otwartoźródłowe, hobbystyczne projekty na Windows (MIT). Robię je dla przyjemności i nie zarabiam na nich.</span></p>
+  <p class="label reveal">02 · <span data-l="en">OPEN SOURCE</span><span data-l="pl">OPEN SOURCE</span></p>
+  <h2 id="oss-h" class="h-sm reveal"><span data-l="en">Free tools,<br><em>open source.</em></span><span data-l="pl">Darmowe narzędzia,<br><em>otwarty kod.</em></span></h2>
+  <p class="lead reveal"><span data-l="en">Hobby projects for Windows, MIT licensed. I build them for fun and don’t make money from them.</span><span data-l="pl">Hobbystyczne projekty na Windows na licencji MIT. Robię je dla przyjemności i nie zarabiam na nich.</span></p>
   <div class="side-grid">
     <a class="glass glow side-card reveal" href="framehub/"><span class="thumb"><img data-l="en" src="framehub/shots/dashboard-en.webp" width="1280" height="800" loading="lazy" decoding="async" alt=""><img data-l="pl" src="framehub/shots/dashboard-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt=""></span><span class="label">// OPEN SOURCE · v1.1.1</span><b>FrameHub</b><span><span data-l="en">Game library (Steam, Epic, GOG, Ubisoft), per-game CPU profiles, session optimization and local benchmarks. New 1.1 interface.</span><span data-l="pl">Biblioteka gier (Steam, Epic, GOG, Ubisoft), profile CPU dla gier, optymalizacja sesji i lokalne benchmarki. Nowy interfejs 1.1.</span></span><em><span data-l="en">Details</span><span data-l="pl">Szczegóły</span> →</em></a>
     <a class="glass glow side-card reveal" href="pco/"><span class="thumb"><img data-l="en" src="pco/shots/processes-en.webp" width="1280" height="800" loading="lazy" decoding="async" alt=""><img data-l="pl" src="pco/shots/processes-pl.webp" width="1280" height="800" loading="lazy" decoding="async" alt=""></span><span class="label">// OPEN SOURCE · v2.1.1</span><b>Process Core Optimizer</b><span><span data-l="en">Pin Windows processes to CPU cores: affinity, CPU Sets, priorities, profiles and smart rules. New 2.1 interface.</span><span data-l="pl">Przypinanie procesów Windows do rdzeni CPU: affinity, CPU Sets, priorytety, profile i reguły. Nowy interfejs 2.1.</span></span><em><span data-l="en">Details</span><span data-l="pl">Szczegóły</span> →</em></a>
@@ -100,9 +113,20 @@
   <p class="reveal"><a class="btn ghost-link" href="https://buymeacoffee.com/9erza" rel="noopener">☕ <span data-l="en">Buy me a coffee (voluntary)</span><span data-l="pl">Postaw mi kawę (dobrowolnie)</span></a></p>
 </section>
 
+<section class="section" id="approach" aria-labelledby="approach-h">
+  <p class="label reveal">03 · <span data-l="en">HOW I WORK</span><span data-l="pl">JAK PRACUJĘ</span></p>
+  <h2 id="approach-h" class="reveal"><span data-l="en">Small on purpose.<br><em>Quiet by default.</em></span><span data-l="pl">Małe z założenia.<br><em>Spokojne domyślnie.</em></span></h2>
+  <p class="lead reveal"><span data-l="en">The same rules apply to a puzzle, a water habit and a CPU tool: be clear, be reversible, don’t get in the way.</span><span data-l="pl">Te same zasady dotyczą łamigłówki, nawyku picia i narzędzia do CPU: jasno, odwracalnie i bez wchodzenia w drogę.</span></p>
+  <ul class="feats">
+    <li class="glass glow feat reveal"><p class="label">01</p><h3><span data-l="en">One person</span><span data-l="pl">Jedna osoba</span></h3><p><span data-l="en">No studio layer, no roadmap theatre. I design, build and support what I ship.</span><span data-l="pl">Bez warstwy studia i teatru wokół planów. Projektuję, buduję i wspieram to, co wydaję.</span></p></li>
+    <li class="glass glow feat reveal"><p class="label">02</p><h3><span data-l="en">No noise</span><span data-l="pl">Bez hałasu</span></h3><p><span data-l="en">No streak guilt and no pressure to come back. Apps should fit into a day, not fight for it.</span><span data-l="pl">Bez wyrzutów za przerwaną serię i bez presji, żeby wracać. Aplikacje mają mieścić się w dniu, a nie walczyć o niego.</span></p></li>
+    <li class="glass glow feat reveal"><p class="label">03</p><h3><span data-l="en">Yours</span><span data-l="pl">Twoje</span></h3><p><span data-l="en">No account required. Data stays on your device; analytics only if you say yes.</span><span data-l="pl">Bez zakładania konta. Dane zostają na Twoim urządzeniu, a analityka działa tylko za Twoją zgodą.</span></p></li>
+  </ul>
+</section>
+
 <section class="section contact" id="contact" aria-labelledby="contact-h">
   <p class="label reveal">04 · <span data-l="en">CONTACT</span><span data-l="pl">KONTAKT</span></p>
-  <h2 id="contact-h" class="reveal"><span data-l="en">Say<br><em>hello.</em></span><span data-l="pl">Napisz<br><em>do nas.</em></span></h2>
+  <h2 id="contact-h" class="reveal"><span data-l="en">Say<br><em>hello.</em></span><span data-l="pl">Napisz<br><em>do mnie.</em></span></h2>
   <p class="lead reveal"><span data-l="en">Questions, ideas, bug reports: I read everything.</span><span data-l="pl">Pytania, pomysły, błędy: czytam wszystko.</span></p>
   <p class="reveal"><a class="mail" href="mailto:contact@erza.studio">contact@erza.studio</a></p>
 </section>
@@ -112,14 +136,13 @@
 <footer class="foot">
   <p class="brand-s">ERZA STUDIO</p>
   <nav aria-label="Footer" data-al-en="Footer" data-al-pl="Stopka">
-    <a href="#how"><span data-l="en">How it works</span><span data-l="pl">Jak to działa</span></a>
-    <a href="#games"><span data-l="en">Games</span><span data-l="pl">Gry</span></a>
-    <a href="#opensource"><span data-l="en">Tools</span><span data-l="pl">Narzędzia</span></a>
-    <a href="#contact"><span data-l="en">Contact</span><span data-l="pl">Kontakt</span></a>
+    <a href="#top"><span data-l="en">Studio</span><span data-l="pl">Studio</span></a>
+    <a href="sippo/">Sippo</a>
     <a href="sortpuzzle/">Sort Puzzle</a>
     <a href="framehub/">FrameHub</a>
     <a href="pco/">PCO</a>
     <a href="sortpuzzle/privacy/"><span data-l="en">Privacy policy</span><span data-l="pl">Polityka prywatności</span></a>
+    <a href="mailto:contact@erza.studio">contact@erza.studio</a>
   </nav>
   <p class="muted">© Erza Studio</p>
 </footer>

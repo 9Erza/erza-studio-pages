@@ -1,4 +1,4 @@
-/* Erza Studio page: language switch, scroll reveal, scroll-driven bottles, hero canvas. No dependencies, no network, no storage. */
+/* Erza Studio page: language switch, screenshot lightbox, scroll reveal, soft hero canvas. No dependencies, no network, no storage. */
 (function () {
   "use strict";
   var root = document.documentElement;
@@ -13,6 +13,12 @@
     $$(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-set") === l)); });
     $$("[data-al-pl]").forEach(function (el) { el.setAttribute("aria-label", el.getAttribute(l === "pl" ? "data-al-pl" : "data-al-en")); });
     var t = $("title"); if (t) { if (!t.getAttribute("data-en")) t.setAttribute("data-en", t.textContent); t.textContent = (l === "pl" && t.getAttribute("data-pl")) || t.getAttribute("data-en"); }
+    var md = $('meta[name="description"]');
+    if (md && md.getAttribute("data-pl")) md.setAttribute("content", md.getAttribute(l === "pl" ? "data-pl" : "data-en"));
+    var ot = $('meta[property="og:title"]');
+    if (ot && ot.getAttribute("data-pl")) ot.setAttribute("content", ot.getAttribute(l === "pl" ? "data-pl" : "data-en"));
+    var od = $('meta[property="og:description"]');
+    if (od && od.getAttribute("data-pl")) od.setAttribute("content", od.getAttribute(l === "pl" ? "data-pl" : "data-en"));
   }
   var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
   setLang(/^pl/i.test(nav) ? "pl" : "en");
@@ -60,78 +66,41 @@
     });
   });
 
-  /* scroll-driven: story bottles fill with scroll, hero card eases out */
-  var story = $("#how"), stage = story && $(".stage", story), bottles = story && $(".bottles", story), hero = $(".hero");
-  if (!story || !hero) { initHero(false); return; }
-  var ticking = false;
-  function update() {
-    ticking = false;
-    var vh = window.innerHeight;
-    var r = story.getBoundingClientRect();
-    var span = Math.max(1, r.height - vh);
-    var p = Math.min(1, Math.max(0, -r.top / span));
-    bottles.style.setProperty("--p", p.toFixed(4));
-    stage.setAttribute("data-step", p < 0.34 ? "1" : p < 0.74 ? "2" : "3");
-    var h = hero.getBoundingClientRect();
-    root.style.setProperty("--hs", Math.min(1, Math.max(0, -h.top / Math.max(1, h.height))).toFixed(3));
-  }
-  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-  addEventListener("scroll", onScroll, { passive: true });
-  addEventListener("resize", onScroll);
-  update();
   initHero(false);
 
-  /* hero: drifting glowing bottles and drops on a canvas (paused offscreen / in background tabs) */
+  /* hero: soft drifting shapes and drops on a canvas (paused offscreen / in background tabs) */
   function initHero(still) {
     var cv = $("#bg"); if (!cv || !cv.getContext) return;
     var ctx = cv.getContext("2d"), W = 0, H = 0, dpr = 1, items = [], drops = [], sprites = [];
     var COLORS = ["#E5484D", "#F7C948", "#1FB5C4", "#8E55D9", "#3FA2F6", "#F06BB0", "#8CD13F", "#F5822B"];
     var seed = 7; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
 
-    function bottle(color) {
-      var s = document.createElement("canvas"); s.width = 160; s.height = 300;
-      var c = s.getContext("2d"); c.translate(80, 150);
-      function path() {
-        c.beginPath(); c.moveTo(-18, -110); c.lineTo(18, -110); c.lineTo(18, -78);
-        c.quadraticCurveTo(38, -66, 38, -42); c.lineTo(38, 92); c.quadraticCurveTo(38, 112, 18, 112);
-        c.lineTo(-18, 112); c.quadraticCurveTo(-38, 112, -38, 92); c.lineTo(-38, -42);
-        c.quadraticCurveTo(-38, -66, -18, -78); c.closePath();
-      }
-      c.save(); path(); c.clip();
-      c.shadowColor = color; c.shadowBlur = 26; c.fillStyle = color; c.globalAlpha = .9;
-      c.fillRect(-40, 8, 80, 110); c.restore();
-      c.shadowBlur = 0; c.globalAlpha = 1; path();
-      c.strokeStyle = "rgba(255,255,255,.4)"; c.lineWidth = 2; c.stroke();
-      c.fillStyle = "rgba(255,255,255,.05)"; c.fill();
-      return s;
-    }
     function sprite(color, kind) {
-      if (kind === 5) return bottle(color);
       var s = document.createElement("canvas"); s.width = 160; s.height = 160;
       var c = s.getContext("2d"); c.translate(80, 80);
       function path() {
         c.beginPath();
-        if (kind === 0) { c.arc(0, 0, 44, 0, 6.2832); }
-        else if (kind === 1) { var r = 14, w = 40; c.moveTo(-w + r, -w); c.arcTo(w, -w, w, w, r); c.arcTo(w, w, -w, w, r); c.arcTo(-w, w, -w, -w, r); c.arcTo(-w, -w, w, -w, r); }
-        else if (kind === 2) { for (var i = 0; i < 6; i++) { var a = Math.PI / 3 * i + Math.PI / 6; c[i ? "lineTo" : "moveTo"](Math.cos(a) * 46, Math.sin(a) * 46); } }
-        else if (kind === 3) { c.moveTo(0, -50); c.lineTo(34, 0); c.lineTo(0, 50); c.lineTo(-34, 0); }
-        else { c.arc(0, 0, 26, 0, 6.2832); }
+        if (kind === 0) { c.arc(0, 0, 42, 0, 6.2832); }
+        else if (kind === 1) { var r = 14, w = 38; c.moveTo(-w + r, -w); c.arcTo(w, -w, w, w, r); c.arcTo(w, w, -w, w, r); c.arcTo(-w, w, -w, -w, r); c.arcTo(-w, -w, w, -w, r); }
+        else if (kind === 2) { for (var i = 0; i < 6; i++) { var a = Math.PI / 3 * i + Math.PI / 6; c[i ? "lineTo" : "moveTo"](Math.cos(a) * 44, Math.sin(a) * 44); } }
+        else if (kind === 3) { c.moveTo(0, -48); c.lineTo(34, 0); c.lineTo(0, 48); c.lineTo(-34, 0); }
+        else { c.arc(0, 0, 30, 0, 6.2832); }
         c.closePath();
       }
-      path(); c.shadowColor = color; c.shadowBlur = 24; c.globalAlpha = kind === 4 ? .85 : .16; c.fillStyle = color; c.fill();
-      c.shadowBlur = kind === 4 ? 0 : 14; c.globalAlpha = kind === 4 ? 0 : .8; c.strokeStyle = color; c.lineWidth = 2; c.stroke();
+      path(); c.shadowColor = color; c.shadowBlur = 22; c.globalAlpha = kind === 4 ? .5 : .28; c.fillStyle = color; c.fill();
+      c.shadowBlur = 0; c.globalAlpha = .55; c.strokeStyle = color; c.lineWidth = 2; c.stroke();
       return s;
     }
-    COLORS.forEach(function (col, i) { sprites.push(sprite(col, i % 2 ? i % 5 : 5)); });
+    COLORS.forEach(function (col, i) { sprites.push(sprite(col, i % 5)); });
 
     function build() {
-      var n = W < 700 ? 7 : 12; items = []; drops = [];
+      var n = W < 700 ? 6 : 10; items = []; drops = [];
       for (var i = 0; i < n; i++) {
         var depth = .35 + rnd() * .9;
-        items.push({ x: rnd() * W, y: rnd() * (H + 120) - 60, s: depth * (W < 700 ? .6 : .9), vy: 5 + depth * 10, vx: (rnd() - .5) * 4,
-          r: (rnd() - .5) * .8, vr: (rnd() - .5) * .04, sp: sprites[i % sprites.length], a: .18 + depth * .32 });
+        items.push({ x: rnd() * W, y: rnd() * (H + 120) - 60, s: depth * (W < 700 ? .5 : .75), vy: 3 + depth * 7, vx: (rnd() - .5) * 3,
+          r: (rnd() - .5) * .8, vr: (rnd() - .5) * .03, sp: sprites[i % sprites.length], a: .12 + depth * .2 });
       }
-      for (var j = 0; j < 22; j++) drops.push({ x: rnd() * W, y: rnd() * H, r: 1.5 + rnd() * 3.5, vy: 6 + rnd() * 16, c: COLORS[j % COLORS.length], a: .25 + rnd() * .5 });
+      for (var j = 0; j < 18; j++) drops.push({ x: rnd() * W, y: rnd() * H, r: 1.2 + rnd() * 3, vy: 4 + rnd() * 12, c: COLORS[j % COLORS.length], a: .18 + rnd() * .38 });
     }
     function size() {
       dpr = Math.min(window.devicePixelRatio || 1, 1.5);
