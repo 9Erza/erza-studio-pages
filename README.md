@@ -6,7 +6,7 @@ No build step: edit the HTML, `studio.css` and `studio.js`, then commit. The pag
 
 - `/` — studio home: phone apps in a two-up section (a carousel appears when there are three or more) and the open-source tools below.
 - `/sippo/` — Sippo, the water habit with a living aquarium (in development).
-- `/sortpuzzle/` — Sort Puzzle and its privacy policy.
+- `/flaskle/` — Flaskle (formerly Sort Puzzle) and its privacy policy. `/sortpuzzle/` and `/sortpuzzle/privacy/` only redirect there.
 - `/framehub/`, `/pco/` — open-source Windows tools.
 - `/404.html` — not-found page.
 
